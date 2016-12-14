@@ -1,0 +1,182 @@
+var data_News = [
+  {
+    "id" : "News_1",
+    "content" : "Breaking solar cream on planet, scientists think it's good news to get close to the Star."
+  },
+  {
+    "id" : "News_2",
+    "content" : "The Antarctic and Arctic have completely melted and killed several species, humans are necessarily superior. Continue to pray."
+  },
+  {
+    "id" : "News_3",
+    "content" : "By dint of looking at the Star to venerate it, you become blind. No need to see for belive in the Star."
+  },
+  {
+    "id" : "News_4",
+    "content" : "The Star plays the role of acceleraor of aging, you take 10 years, but the maturity can be only better."
+  },
+  {
+    "id" : "News_5",
+    "content" : "You have been diagnosed with skin cancer, it's a benediction the all mighty has entered your body."
+  },
+  {
+    "id" : "News_6",
+    "content" : "All drills are dead but we not need oxygen as long as our reason for living grown up ."
+  },
+  {
+    "id" : "News_7",
+    "content" : "The population of the earth can't be more closer thanks our uniform skin color."
+  },
+  {
+    "id" : "News_8",
+    "content" : "The radiations become more and more strong, there are trijambist cases, an additional strength given by our revered."
+  },
+  {
+    "id" : "News_9",
+    "content" : "The water are more and more uncommon, fortunately the heat make sewat."
+  },
+  {
+    "id" : "News_10",
+    "content" : "The size of the Star gains weight to this point we no longer have the notion of time, but it's not a problem, all our time must devote to the Star."
+  },
+  {
+    "id" : "New_11",
+    "content" : "The human has evolved by dint of looking in the air, all newborns born without neck."
+  },
+  {
+    "id" : "News_12",
+    "content" : "The Olympic Games they concerne only the launched weight."
+  },
+  {
+    "id" : "News_13",
+    "content" : "Joe Kovacs committed in the research for feed the Star."
+  },
+  {
+    "id" : "News_14",
+    "content" : "The population become blond during some time but now every body is bald."
+  },
+  {
+    "id" : "News_15",
+    "content" : "The UV cabin are bannished in the world, using that it's betray the Star."
+  },
+  {
+    "id" : "News_16",
+    "content" : "The nights are more and more short thanks our prayers."
+  },
+  {
+    "id" : "News_17",
+    "content" : "The protest marche for the beach umbrella are more and more recurrent."
+  },
+  {
+    "id" : "News_18",
+    "content" : "The death penalty established in whole world to the supporter of the rain."
+  },
+  {
+    "id" : "News_19",
+    "content" : "The buildings increases in floor, to can pray closer of the Star."
+  },
+  {
+    "id" : "News_20",
+    "content" : "Big migration of the population to the country near to the equator."
+  },
+  {
+    "id" : "News_21",
+    "content" : "No need to be afraid of his shadow, she does not exist."
+  },
+  {
+    "id" : "News_22",
+    "content" : "The Star allows to fortify the bones, he can only be good for us."
+  },
+  {
+    "id" : "News_23",
+    "content" : "The production of solar panels explosed"
+  },
+  {
+    "id" : "News_24",
+    "content" : "Explosions caused by power stations overexposed, it's the fate to the infidels."
+  },
+  {
+    "id" : "News_25",
+    "content" : "The radioactivity is so strong that news creatures appear, we repopulate the earth ."
+  },
+  {
+    "id" : "News_26",
+    "content" : "The eath and the Star will make only one."
+  },
+  {
+    "id" : "News_27",
+    "content" : "The sunglasses become very trend."
+  },
+  {
+    "id" : "News_28",
+    "content" : "Right in the target!"
+  },
+  {
+    "id" : "News_29",
+    "content" : "The athees dicover the religion of the Star : 'What we missed during all these years?'."
+  },
+  {
+    "id" : "News_30",
+    "content" : "You will never have a cold again, and that it's cool."
+  },
+  {
+    "id" : "News_31",
+    "content" : "Rihanna stop music to dedicate oneself to the progression of the Star."
+  },
+  {
+    "id" : "News_32",
+    "content" : "A man found dead cause burn, researchers conclude that it was the Mooners."
+  },
+  {
+    "id" : "News_33",
+    "content" : "The sky became almost fully red, it's beautiful."
+  },
+  {
+    "id" : "News_34",
+    "content" : "You should be wary of Mooners, we can't trust them."
+  },
+  {
+    "id" : "News_35",
+    "content" : "Thanks the Star we no need furnace or cooking plate, all cooked naturally!"
+  },
+  {
+    "id" : "News_36",
+    "content" : "The UVC touch the earth, now we are closest to the Star."
+  },
+  {
+    "id" : "News_37",
+    "content" : "The president of USA propose the world population live naked for fell completly the Star."
+  },
+  {
+    "id" : "News_38",
+    "content" : "The heat increases the risk de diarrhea, we have settled the problem of obesity."
+  },
+  {
+    "id" : "News_39",
+    "content" : "A third world war against the Mooners ?"
+  },
+  {
+    "id" : "News_40",
+    "content" : "The heat cause loss of consciousness, The Star chooses when it's necessary to lie down, he is benevolent."
+  },
+  {
+    "id" : "News_41",
+    "content" : "The Star dehydrates our body, good news : almost no need to go in the toilet."
+  },
+  {
+    "id" : "News_42",
+    "content" : "A petition against self-tanning traveled around the world."
+  },
+  {
+    "id" : "News_43",
+    "content" : "What is going on the head of Mooners ?"
+  },
+  {
+    "id" : "News_44",
+    "content" : "The Star stop the deficiencies thanks to the Vitamin D he offer us."
+  },
+  {
+    "id" : "News_45",
+    "content" : "The Mooners becoming more and more dangerous."
+  }
+];

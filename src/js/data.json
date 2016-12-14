@@ -1,0 +1,242 @@
+var data_batiments = [{
+    "id": "Holy Solar panels",
+    "basePrice": 10,
+    "lumenS": 0.1,
+    "currentlvl": 0,
+    "galaxyName": "solar_panels",
+    "galaxyWidth": 2,
+    "galaxyColor": "#ffffff",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Sun abbaye",
+    "basePrice": 100,
+    "lumenS": 1,
+    "currentlvl": 0,
+    "galaxyName": "sun_abbaye",
+    "galaxyWidth": 2,
+    "galaxyColor": "#e4eab0",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "House of the sun",
+    "basePrice": 1100,
+    "lumenS": 8,
+    "currentlvl": 0,
+    "galaxyName": "house_sun",
+    "galaxyWidth": 3,
+    "galaxyColor": "#e4eab0",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Solar Chapel",
+    "basePrice": 12000,
+    "lumenS": 47,
+    "currentlvl": 0,
+    "galaxyName": "solar_chapel",
+    "galaxyWidth": 3,
+    "galaxyColor": "#ffffff",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Stellar Church",
+    "basePrice": 130000,
+    "lumenS": 260,
+    "currentlvl": 0,
+    "galaxyName": "stellar_church",
+    "galaxyWidth": 3,
+    "galaxyColor": "#eac46e",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Star Cathedral",
+    "basePrice": 1400000,
+    "lumenS": 1400,
+    "currentlvl": 0,
+    "galaxyName": "star_cathedral",
+    "galaxyWidth": 4,
+    "galaxyColor": "#ea9f5d",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Plasma Palace",
+    "basePrice": 20000000,
+    "lumenS": 7800,
+    "currentlvl": 0,
+    "galaxyName": "plasma_place",
+    "galaxyWidth": 4,
+    "galaxyColor": "#88ea8c",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Cult House of the Helium",
+    "basePrice": 330000000,
+    "lumenS": 44000,
+    "currentlvl": 0,
+    "galaxyName": "cult_helium",
+    "galaxyWidth": 4,
+    "galaxyColor": "#5eeac6",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Novae Monument",
+    "basePrice": 5100000000,
+    "lumenS": 260000,
+    "currentlvl": 0,
+    "galaxyName": "novae",
+    "galaxyWidth": 4,
+    "galaxyColor": "#ea8ad4",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Super Novae Monument",
+    "basePrice": 75000000000,
+    "lumenS": 1600000,
+    "currentlvl": 0,
+    "galaxyName": "super_novae",
+    "galaxyWidth": 5,
+    "galaxyColor": "#ea8ad4",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Sunshine Tower",
+    "basePrice": 14000000000000,
+    "lumenS": 10000000,
+    "currentlvl": 0,
+    "galaxyName": "sunshine_tower",
+    "galaxyWidth": 5,
+    "galaxyColor": "#eac46e",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Sun Capital",
+    "basePrice": 170000000000000,
+    "lumenS": 430000000,
+    "currentlvl": 0,
+    "galaxyName": "sun_capital",
+    "galaxyWidth": 6,
+    "galaxyColor": "#ea9863",
+    "content":"Increase number of illuminers by : 500 "
+}, ];
+
+var data_upgrades_lumen = [
+
+{
+    "id": "Nova",
+    "upgradePrice": 10000,
+    "value": 2,
+    "img": "src/img/nova.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Supernova",
+    "upgradePrice": 1000000,
+    "value": 3,
+    "img": "src/img/nova_super.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Plasma Injector I",
+    "upgradePrice": 50000,
+    "value": null,
+    "img": "src/img/plasma_injector_1.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Plasma Injector II",
+    "upgradePrice": 350000,
+    "value": null,
+    "img": "src/img/plasma_injector_2.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Plasma Injector III",
+    "upgradePrice": 2000000,
+    "value": null,
+    "img": "src/img/plasma_injector_3.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Yellow star",
+    "upgradePrice": 80000,
+    "value": 10,
+    "img": "src/img/star_yellow.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Orange star",
+    "upgradePrice": 400000,
+    "value": 10,
+    "img": "src/img/star_orange.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Blue star",
+    "upgradePrice": 1200000,
+    "value": 10,
+    "img": "src/img/star_blue.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Purple star",
+    "upgradePrice": 2500000,
+    "value": 10,
+    "img": "src/img/star_purple.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Hydrogen Isotopes",
+    "upgradePrice": 50,
+    "value": 10,
+    "img": "src/img/isotope_hydrogen.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Helium Isotopes",
+    "upgradePrice": 75000,
+    "value": 0,
+    "img": "src/img/isotope_helium.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Carbon Isotopes",
+    "upgradePrice": 120000,
+    "value": 0,
+    "img": "src/img/isotope_carbon.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Neon Isotopes",
+    "upgradePrice": 1000000,
+    "value": 0,
+    "img": "src/img/isotope_neon.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Condensators",
+    "upgradePrice": 5000,
+    "value": 0,
+    "img": "src/img/condensator.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Super Condensators",
+    "upgradePrice": 80000,
+    "value": 0,
+    "img": "src/img/condensator_super.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Ultra Condensators",
+    "upgradePrice": 300000,
+    "value": 0,
+    "img": "src/img/condensator_ultra.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Illumination I",
+    "upgradePrice": 60000,
+    "value": 0,
+    "img": "src/img/illumination1.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Illumination II",
+    "upgradePrice": 250000,
+    "value": 0,
+    "img": "src/img/illumination2.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Illumination III",
+    "upgradePrice": 1300000,
+    "value": 0,
+    "img": "src/img/illumination3.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Illumination IV",
+    "upgradePrice": 2000000,
+    "value": 0,
+    "img": "src/img/illumination4.svg",
+    "content":"Increase number of illuminers by : 500 "
+}, {
+    "id": "Illumination V",
+    "upgradePrice": 80000000,
+    "value": 0,
+    "img": "src/img/illumination5.svg",
+    "content":"Increase number of illuminers by : 500 "
+}
+
+
+];

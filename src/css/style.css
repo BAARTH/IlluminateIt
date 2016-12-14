@@ -1,0 +1,317 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    /*
+background: #242424; 
+background: -moz-radial-gradient(center, ellipse cover, #242424 0%, #000000 100%);
+background: -webkit-radial-gradient(center, ellipse cover, #242424 0%,#000000 100%); 
+background: radial-gradient(ellipse at center, #242424 0%,#000000 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#000000',GradientType=1 ); */
+    background: #000;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.moon {
+    position: relative;
+    display: inline-block;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-animation: flash_little 1s ease-in-out alternate infinite;
+    animation: flash_little 1s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes flash_little {
+    to {
+        -webkit-filter: blur(6px);
+        filter: blur(6px);
+    }
+}
+
+@keyframes flash_little {
+    to {
+        -webkit-filter: blur(6px);
+        filter: blur(6px);
+    }
+}
+
+.moon:before {
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 200%;
+    background: #fff;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    content: "";
+    opacity: 1;
+    -webkit-animation: flash_big 3.5s ease-in-out alternate infinite;
+    animation: flash_big 3.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes flash_big {
+    to {
+        -webkit-filter: blur(37px);
+        filter: blur(37px);
+    }
+}
+
+@keyframes flash_big {
+    to {
+        -webkit-filter: blur(37px);
+        filter: blur(37px);
+    }
+}
+
+.moon {
+    width: 0px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 70px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    opacity: 0.1;
+}
+
+.moon_light {
+    width: 0px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 120px;
+    border-radius: 120px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    opacity: 0.1;
+}
+
+.stats {
+    position: absolute;
+    text-align: left;
+    left: 2%;
+    top: 5%;
+    height: 15%;
+}
+
+.stats p {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.stats .unleash {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    margin-bottom: 20px;
+    transition: all ease 0.2s;
+}
+
+.stats .unleash:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.improvments {
+    width: 250px;
+}
+
+.improvments.news {
+    position: absolute;
+    top: 29%;
+    left: 2%;
+    height: 45%;
+}
+
+.improvments.news h2 {
+    text-align: left;
+}
+
+.improvments.news li {
+    text-align: left;
+    height: auto;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.improvments.batiments {
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    height: 45%;
+}
+
+.improvments.upgrades img {
+    margin-top: 15px;
+    height: 60px;
+    float: right;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.improvments.upgrades {
+    position: absolute;
+    top: 48%;
+    right: 2%;
+    height: 45%;
+}
+
+.improvments.upgrades li {
+    display: none;
+}
+
+.improvments ul {
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.improvments ul::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+}
+
+.improvments ul::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.improvments h2 {
+    text-align: right;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    padding: 20px 0px;
+}
+
+.improvments li {
+    text-align: right;
+    min-height: 90px;
+    color: #727272;
+    cursor: pointer;
+    position: relative;
+}
+
+.improvments.news li {
+    min-height: auto;
+    height: auto;
+    padding-right: 5px;
+    text-align: right;
+}
+
+.improvments li span {
+    display: block;
+    line-height: normal;
+}
+
+.improvments div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    /*    padding: 5px;*/
+    padding-right: 10px;
+}
+
+.improvments .infos {
+    height: 60px;
+    transition: opacity 0.1s ease-in;
+}
+
+.improvments .desc {
+    background: #fff;
+    color: #000;
+    /*    height: 100%;*/
+    transform-origin: 100% 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+    vertical-align: middle;
+}
+
+.improvments .id {
+    font-weight: bold;
+}
+
+
+.improvments .price .price_number{
+    display: inline;
+    font-weight: bold;
+}
+
+.improvments.batiments li:hover .desc {
+    transform: translateX(0);
+}
+
+.improvments.upgrades li:hover .desc {
+    transform: translateX(-30%);
+}
+
+.improvments .desc .buy {
+    width: 70%;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    transform: translateX(50%);
+}
+
+.improvments.batiments .desc .buy {
+    width: 100%;
+    transform: translateX(0);
+}
+
+
+/* BATIMENTS */
+
+.galaxy {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transform-origin: 50 50;
+    animation: rotate_galaxy 700s linear infinite;
+    z-index: -10;
+}
+
+.galaxy canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate_galaxy {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.solar_panels {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    background: #fff;
+    padding: 2px;
+    border-radius: 100%;
+}
+
