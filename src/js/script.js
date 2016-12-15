@@ -3,9 +3,11 @@ var html_loading = document.querySelector('.loading');
 var click_loading = document.querySelector('.moon.loading');
 var html_light_loading = document.querySelector('.light_loading');
 var html_light_loading_txt = document.querySelector('.light_loading_txt');
-var light_loading = 0;
+var light_loading = 0.1;
 var min_light_loading = 0;
 var max_light_loading = 1;
+var disabled_loading = false;
+
 click_loading.addEventListener('click', loading_click);
 
 function loading_click() {
@@ -29,14 +31,20 @@ function decrease_the_light_loading() {
 setInterval(function() {
     decrease_the_light_loading();
     html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
-    if (light_loading > max_light_loading) {
-        html_loading.className += " disable";
-        html_light_loading.className += " disable";
-        setTimeout(function() {
-            html_loading.style.display = 'none';
-        }, 5000);
+    if ((light_loading > max_light_loading) && (disabled_loading == false)) {
+        disable_loading()
+        disabled_loading = true;
     }
 }, 50);
+
+function disable_loading() {
+    {
+        html_loading.className += " disable";
+        html_light_loading.className += " disable";
+        html_loading.style.display = 'none';
+
+    }
+}
 // END LOADING //
 
 var canvas = document.querySelector('canvas');
@@ -142,6 +150,8 @@ if (localStorage.getItem("First play") == null) {
     var clickpercent_buyed = localStorage.getItem("clickpercent_buyed");
     var data_batiments = JSON.parse(localStorage.getItem("data_batiments"));
 }
+
+console.log(data_batiments);
 
 
 
@@ -335,6 +345,7 @@ function start() {
 }
 redraw_on_buy();
 start();
+
 
 function progressive_increment() {
 
@@ -619,8 +630,8 @@ open_tab_upgrades.addEventListener('click', function() {
         if (window.matchMedia("(max-width: 374px)").matches) {
             open_tab_news.style.zIndex = '-1';
 
-        click.style.zIndex = '-1';
-        document.querySelector('.moon_b').style.zIndex = '-2';
+            click.style.zIndex = '-1';
+            document.querySelector('.moon_b').style.zIndex = '-2';
         }
 
 
@@ -633,7 +644,7 @@ open_tab_upgrades.addEventListener('click', function() {
 
         if (window.matchMedia("(max-width: 400px)").matches) {
             open_tab_news.style.zIndex = '10';
-                    click.style.zIndex = '100';
+            click.style.zIndex = '100';
         }
 
 
@@ -659,7 +670,7 @@ open_tab_news.addEventListener('click', function() {
         if (window.matchMedia("(max-width: 374px)").matches) {
             open_tab_upgrades.style.zIndex = '-1';
             click.style.zIndex = '-1';
-        document.querySelector('.moon_b').style.zIndex = '-2';
+            document.querySelector('.moon_b').style.zIndex = '-2';
         }
 
 
