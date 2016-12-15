@@ -329,7 +329,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     background: #fff;
     color: #000;
     transform-origin: 100% 0;
-    transform: translateX(-100%);
+    transform: translateX(-105%);
     transition: transform 0.3s ease-in;
     vertical-align: middle;
 }
