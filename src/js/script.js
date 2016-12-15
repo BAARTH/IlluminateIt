@@ -3,6 +3,7 @@ var html_loading = document.querySelector('.loading');
 var click_loading = document.querySelector('.moon.loading');
 var html_light_loading = document.querySelector('.light_loading');
 var html_light_loading_txt = document.querySelector('.light_loading_txt');
+var skip_intro = document.querySelector('.skip_intro');
 var light_loading = 0.1;
 var min_light_loading = 0;
 var max_light_loading = 1;
@@ -23,7 +24,7 @@ function loading_click() {
 }
 
 function decrease_the_light_loading() {
-    if (click_loading.style.opacity > min_light) {
+    if (click_loading.style.opacity > min_light_loading) {
         click_loading.style.opacity -= 0.001;
         light_loading -= 0.001;
     }
@@ -37,11 +38,18 @@ setInterval(function() {
     }
 }, 50);
 
+skip_intro.addEventListener('click', function() {
+    disable_loading()
+    disabled_loading = true;
+});
+
 function disable_loading() {
     {
         html_loading.className += " disable";
         html_light_loading.className += " disable";
-        html_loading.style.display = 'none';
+        setTimeout(function() {
+            html_loading.style.display = 'none';
+        }, 5000);
 
     }
 }
@@ -73,6 +81,7 @@ var html_lumen = document.querySelector('.lumen');
 var html_light = document.querySelector('.light');
 var html_unleash = document.querySelector('.unleash');
 var html_illumination = document.querySelector('.illumination');
+var html_illuminers = document.querySelector('.illuminers');
 var html_batiments_list = document.querySelector('.batiments ul');
 var html_upgrades_list = document.querySelector('.upgrades ul');
 var html_news_list = document.querySelector('.news ul');
@@ -295,6 +304,7 @@ function start() {
     // WRITE IN HTML 
     html_lumen.innerHTML = 'Lumen : ' + Math.round(lumen) + '/' + max_lumen;
     html_light.innerHTML = 'Performance : ' + Math.round(light * 100) + '%';
+    html_illuminers.innerHTML = Math.round(product_increment) + ' illuminers';
     html_illumination.innerHTML = 'Illumination : ' + Math.round(illumination) + ' ill';
     if (lumen > max_lumen) {
         lumen = max_lumen;
@@ -699,5 +709,28 @@ open_tab_news.addEventListener('click', function() {
         open_tab_upgrades.innerHTML = "open upgrades_";
 
         upgrades_is_open = false;
+    }
+});
+
+
+var open_tab_achievements = document.querySelector('.open_achievements');
+var achievements_container = document.querySelector('.achievements');
+var achievements_is_open = false;
+
+open_tab_achievements.addEventListener('click', function() {
+    if (achievements_is_open == true) {
+        achievements_container.style.transform = 'translateY(-150%)';
+        open_tab_achievements.style.transform = 'translateX(-50%) translateY(0px)';
+
+        open_tab_achievements.innerHTML = "see achievements_";
+
+        achievements_is_open = false;
+    } else if (achievements_is_open == false) {
+        achievements_container.style.transform = 'translateX(0%)';
+        open_tab_achievements.style.transform = 'translateX(-50%) translateY(90%)';
+
+        open_tab_achievements.innerHTML = "hide achievements_";
+
+        achievements_is_open = true;
     }
 });

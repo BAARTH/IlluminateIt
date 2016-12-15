@@ -50,6 +50,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     color: #ffffff;
 }
 
+.skip_intro {
+    color: #ffffff;
+    position: absolute;
+    bottom: 5%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+}
+
+.skip_intro:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @keyframes next_to_flash {
     to {
         opacity: 0;
@@ -276,8 +290,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .improvments.news li {
     min-height: auto;
     height: auto;
-    padding-right: 5px;
+    padding-right: 10px;
     text-align: right;
+    cursor: default;
 }
 
 .improvments li span {
@@ -314,7 +329,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .improvments .desc {
     background: #fff;
     color: #000;
-    /*    height: 100%;*/
     transform-origin: 100% 0;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in;
@@ -352,10 +366,60 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     transform: translateX(0);
 }
 
-.open_achievments {
-    font-size: 13px;
+.achievements {
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100vw;
+    z-index: 950;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-150%);
+    transition: all 0.5s ease;
+}
+
+.open_achievements {
+    font-size: 14px;
     color: #ffffff;
     position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0%);
+    transition: all 0.5s ease;
+    z-index: 951;
+}
+
+.open_achievements:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.achievements ul {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80%;
+}
+
+.achievements ul li {
+    display: block;
+    line-height: 60px;
+    vertical-align: middle;
+    height: 60px;
+}
+
+.achievements .achievement_content {
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.achievements .achievement_icon img {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    transform: translateY(40%);
 }
 
 
@@ -389,12 +453,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         margin-bottom: 12px;
         font-size: 15px;
     }
+    .stats p.illuminers {
+        font-size: 11px;
+        margin-bottom: 9px;
+    }
     .stats .unleash {
+        position: relative;
         display: inline-block;
         font-size: 13px;
         font-weight: normal;
         padding-bottom: 2px;
         margin-bottom: 13px;
+        z-index: 12;
     }
     .improvments_container_upgrades {
         transform: translateX(150%);
