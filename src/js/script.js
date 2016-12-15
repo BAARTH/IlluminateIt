@@ -1,43 +1,43 @@
-// LOADING //
-var html_loading = document.querySelector('.loading');
-var click_loading = document.querySelector('.moon.loading');
-var html_light_loading = document.querySelector('.light_loading');
-var html_light_loading_txt = document.querySelector('.light_loading_txt');
-var light_loading = 0;
-var min_light_loading = 0;
-var max_light_loading = 1;
-click_loading.addEventListener('click', loading_click);
+// // LOADING //
+// var html_loading = document.querySelector('.loading');
+// var click_loading = document.querySelector('.moon.loading');
+// var html_light_loading = document.querySelector('.light_loading');
+// var html_light_loading_txt = document.querySelector('.light_loading_txt');
+// var light_loading = 0;
+// var min_light_loading = 0;
+// var max_light_loading = 1;
+// click_loading.addEventListener('click', loading_click);
 
-function loading_click() {
-    if (light_loading < max_light_loading) {
-        light_loading += 0.01;
-        if (light_loading < max_light_loading) {
-            light_loading += 0.01;
-        }
-        click_loading.style.opacity = light_loading;
-    } else if (light_loading >= max_light_loading) {
-        click_loading.removeEventListener('click', loading_click);
-    }
-    console.log(light_loading, max_light_loading, html_loading.style.opacity)
-}
+// function loading_click() {
+//     if (light_loading < max_light_loading) {
+//         light_loading += 0.02;
+//         if (light_loading < max_light_loading) {
+//             light_loading += 0.01;
+//         }
+//         click_loading.style.opacity = light_loading;
+//     } else if (light_loading >= max_light_loading) {
+//         click_loading.removeEventListener('click', loading_click);
+//     }
+//     console.log(light_loading, max_light_loading, html_loading.style.opacity)
+// }
 
-function decrease_the_light_loading() {
-    if (click_loading.style.opacity > min_light) {
-        click_loading.style.opacity -= 0.001;
-        light_loading -= 0.001;
-    }
-}
-setInterval(function() {
-    decrease_the_light_loading();
-    html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
-    if (light_loading > max_light_loading) {
-        html_loading.className += " disable";
-        html_light_loading.className += " disable";
-        setTimeout(function() {
-            html_loading.style.display = 'none';
-        }, 5000);
-    }
-}, 50);
+// function decrease_the_light_loading() {
+//     if (click_loading.style.opacity > min_light) {
+//         click_loading.style.opacity -= 0.001;
+//         light_loading -= 0.001;
+//     }
+// }
+// setInterval(function() {
+//     decrease_the_light_loading();
+//     html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
+//     if (light_loading > max_light_loading) {
+//         html_loading.className += " disable";
+//         html_light_loading.className += " disable";
+//         setTimeout(function() {
+//             html_loading.style.display = 'none';
+//         }, 5000);
+//     }
+// }, 50);
 // END LOADING //
 
 var canvas = document.querySelector('canvas');
@@ -182,7 +182,7 @@ document.addEventListener('mousedown', function(e) {
 }, false);
 
 
-// Click for Light
+// Click event
 click.addEventListener('click', function() {
     click_state = false;
     click_state_time = 0;
@@ -200,8 +200,6 @@ click.addEventListener('click', function() {
     }
     click_state = true;
 });
-
-
 
 // Decrease Light
 function decrease_the_light() {
@@ -527,3 +525,78 @@ for (i = 0; i < upgrades_tab.upgrades.length; i++) {
 
     }, false);
 }
+
+
+// Responsive 
+
+var open_tab_upgrades = document.querySelector('.open_upgrades');
+var upgrades_container = document.querySelector('.improvments_container_upgrades');
+var upgrades_is_open = false;
+
+var open_tab_news = document.querySelector('.open_news');
+var news_container = document.querySelector('.improvments.news');
+var news_is_open = false;
+
+open_tab_upgrades.addEventListener('click', function() {
+    if (upgrades_is_open == false) {
+        upgrades_container.style.transform = 'translateX(0)';
+        open_tab_upgrades.style.transform = 'translateY(-50%) translateX(-255px) rotateZ(-90deg)';
+
+        open_tab_news.style.zIndex = '-1';
+        click.style.zIndex = '-1';
+
+        open_tab_upgrades.innerHTML = "close upgrades_";
+
+        upgrades_is_open = true;
+    } else if (upgrades_is_open == true) {
+        upgrades_container.style.transform = 'translateX(100%)';
+        open_tab_upgrades.style.transform = 'translateY(-50%) translateX(0px) rotateZ(-90deg)';
+
+        open_tab_news.style.zIndex = '10';
+        click.style.zIndex = '100';
+
+        open_tab_upgrades.innerHTML = "open upgrades_";
+
+        upgrades_is_open = false;
+    }
+    if (news_is_open == true) {
+        console.log(upgrades_is_open);
+        news_container.style.transform = 'translateX(-100%)';
+        open_tab_news.style.transform = 'translateY(-50%) translateX(0px) rotateZ(90deg)';
+        open_tab_news.innerHTML = "open news_";
+        news_is_open = false;
+    }
+});
+
+open_tab_news.addEventListener('click', function() {
+    if (news_is_open == false) {
+        news_container.style.transform = 'translateX(0)';
+        open_tab_news.style.transform = 'translateY(-50%) translateX(255px) rotateZ(90deg)';
+
+        open_tab_upgrades.style.zIndex = '-1';
+        click.style.zIndex = '-1';
+
+        open_tab_news.innerHTML = "close news_";
+
+        news_is_open = true;
+    } else if (news_is_open == true) {
+        console.log(upgrades_is_open);
+        news_container.style.transform = 'translateX(-100%)';
+        open_tab_news.style.transform = 'translateY(-50%) translateX(0px) rotateZ(90deg)';
+
+        open_tab_upgrades.style.zIndex = '10';
+        click.style.zIndex = '100';
+
+        open_tab_news.innerHTML = "open news_";
+
+        news_is_open = false;
+    }
+    if (upgrades_is_open == true) {
+        upgrades_container.style.transform = 'translateX(100%)';
+        open_tab_upgrades.style.transform = 'translateY(-50%) translateX(0px) rotateZ(-90deg)';
+
+        open_tab_upgrades.innerHTML = "open upgrades_";
+
+        upgrades_is_open = false;
+    }
+});
