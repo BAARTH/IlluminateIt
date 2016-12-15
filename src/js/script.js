@@ -1,3 +1,48 @@
+// LOADING //
+var html_loading = document.querySelector('.loading');
+var click_loading = document.querySelector('.moon.loading');
+var html_light_loading = document.querySelector('.light_loading');
+var html_light_loading_txt = document.querySelector('.light_loading_txt');
+var light_loading = 0.9;
+var min_light_loading = 0;
+var max_light_loading = 1;
+click_loading.addEventListener('click', loading_click);
+
+function loading_click() {
+    if (light_loading < max_light_loading) {
+        light_loading += 0.01;
+        if (light_loading < max_light_loading) {
+            light_loading += 0.01;
+        }
+        click_loading.style.opacity = light_loading;
+    } else if (light_loading >= max_light_loading) {
+        click_loading.removeEventListener('click', loading_click);
+    }
+    console.log(light_loading, max_light_loading, html_loading.style.opacity)
+}
+
+function decrease_the_light_loading() {
+    if (click_loading.style.opacity > min_light) {
+        click_loading.style.opacity -= 0.001;
+        light_loading -= 0.001;
+    }
+}
+setInterval(function() {
+    decrease_the_light_loading();
+    html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
+    if (light_loading > max_light_loading) {
+        html_loading.className += " disable";
+        html_light_loading.className += " disable";
+        setTimeout(function() {
+            html_loading.style.display = 'none';
+        }, 5000);
+    }
+}, 50);
+
+
+
+// END LOADING //
+
 var canvas = document.querySelector('canvas');
 var context = canvas.getContext('2d');
 
@@ -17,7 +62,7 @@ function changeResolution(canvas, scaleFactor) {
 }
 changeResolution(canvas, 2);
 
-var click = document.querySelector('.moon');
+var click = document.querySelector('.moon.official');
 var html_lumen = document.querySelector('.lumen');
 var html_light = document.querySelector('.light');
 var html_unleash = document.querySelector('.unleash');
@@ -27,6 +72,7 @@ var html_upgrades_list = document.querySelector('.upgrades ul');
 var html_news_list = document.querySelector('.news ul');
 var html_galaxy = document.querySelector('.galaxy');
 var batiments_on_galaxy = [];
+var particles = [];
 var array;
 var html_news_list_li;
 var timer;
@@ -37,7 +83,7 @@ var need = 10;
 var decrease_light = 100;
 var decrease_speed = 400;
 var lumen = 0;
-var illumination = 9;
+var illumination = 0;
 var product_ratio = 1;
 var product_increment = 1;
 var lvl_increment = 1;
@@ -118,6 +164,19 @@ for (i = 0; i < upgrades_tab.upgrades.length; i++) {
     upgrades_tab.upgrades[i].setAttribute('data-id', i);
     upgrades_tab.upgrades[i].data_id = upgrades_tab.upgrades[i].getAttribute('data-id');
     upgrades_tab.upgrades[i].desc = upgrades_tab.upgrades[i].querySelector('.desc');
+    if (data_upgrades_lumen[i].id == "Nova") {
+        upgrades_tab.upgrades[i].style.display = "block";
+    } else if (data_upgrades_lumen[i].id == "Plasma Injector I") {
+        upgrades_tab.upgrades[i].style.display = "block";
+    } else if (data_upgrades_lumen[i].id == "Yellow star") {
+        upgrades_tab.upgrades[i].style.display = "block";
+    } else if (data_upgrades_lumen[i].id == "Hydrogen Isotopes") {
+        upgrades_tab.upgrades[i].style.display = "block";
+    } else if (data_upgrades_lumen[i].id == "Condensators") {
+        upgrades_tab.upgrades[i].style.display = "block";
+    } else if (data_upgrades_lumen[i].id == "Illumination I") {
+
+    }
 }
 
 
@@ -199,6 +258,10 @@ function start() {
     }
     // draw_batiments(data_batiments[1].galaxyWidth, data_batiments[1].galaxyColor);
     redraw();
+    // draw_particles();
+    update_particles();
+    draw_particles();
+    draw_batiments()
 }
 redraw_on_buy();
 start();
@@ -228,7 +291,7 @@ for (i = 0; i < upgrades_tab.batiments.length; i++) {
             product_increment += (data_batiments[this.data_id].lumenS * lvl_increment);
             illumination -= data_batiments[this.data_id].basePrice;
             data_batiments[this.data_id].basePrice = price(this.data_id);
-            draw_batiments(data_batiments[this.data_id].galaxyWidth, data_batiments[this.data_id].galaxyColor);
+            add_batiments(data_batiments[this.data_id].galaxyWidth, data_batiments[this.data_id].galaxyColor);
             redraw_on_buy();
         }
 
@@ -286,39 +349,25 @@ function redraw_on_buy() {
         }
         upgrades_tab.upgrades[i].content.innerHTML = data_upgrades_lumen[i].content;
         upgrades_tab.upgrades[i].icons.src = data_upgrades_lumen[i].img;
-
-        if (data_upgrades_lumen[i].id == "Nova") {
-            upgrades_tab.upgrades[i].style.display = "block";
-        } else if (data_upgrades_lumen[i].id == "Plasma Injector I") {
-            upgrades_tab.upgrades[i].style.display = "block";
-        } else if (data_upgrades_lumen[i].id == "Yellow star") {
-            upgrades_tab.upgrades[i].style.display = "block";
-        } else if (data_upgrades_lumen[i].id == "Hydrogen Isotopes") {
-            upgrades_tab.upgrades[i].style.display = "block";
-        } else if (data_upgrades_lumen[i].id == "Condensators") {
-            upgrades_tab.upgrades[i].style.display = "block";
-        } else if (data_upgrades_lumen[i].id == "Illumination I") {
-
-        }
     }
 }
 
 
 
 
-function draw_batiments(width, color) {
+function add_batiments(width, color) {
     var new_batiment = {};
     var pt_angle = Math.random() * 2 * Math.PI;
     var pt_radius_sq = Math.random() * radius * radius;
     new_batiment.x = Math.sqrt(pt_radius_sq) * Math.cos(pt_angle) + (canvas.width / 4);
     new_batiment.y = Math.sqrt(pt_radius_sq) * Math.sin(pt_angle) + (canvas.height / 4);
-
-
     new_batiment.width = width;
     new_batiment.color = color;
     batiments_on_galaxy.push(new_batiment);
-    context.clearRect(0, 0, canvas.width, canvas.height);
 
+}
+
+function draw_batiments() {
     for (var i = 0; i < batiments_on_galaxy.length; i++) {
         context.beginPath();
         context.arc(batiments_on_galaxy[i].x, batiments_on_galaxy[i].y, batiments_on_galaxy[i].width, 0, Math.PI * 2);
@@ -326,6 +375,52 @@ function draw_batiments(width, color) {
         context.fill();
     }
 }
+
+function add_particle(bat) {
+    var particle = {};
+    var pt_angle = Math.random() * 2 * Math.PI;
+    var pt_radius_sq = Math.random() * radius * radius;
+    particle.x = bat.x;
+    particle.y = bat.y;
+    particle.width = 1;
+    particle.color = bat.color;
+    particles.push(particle);
+}
+
+/* Updates particles */
+function update_particles() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < particles.length; i++) {
+        var _particle = particles[i];
+        _particle.x += (canvas.width / 4 - _particle.x) * 0.01;
+        _particle.y += (canvas.height / 4 - _particle.y) * 0.01;
+        if (((_particle.x <= (canvas.width / 4) + 5) && (_particle.x >= (canvas.width / 4) - 5)) && ((_particle.y <= (canvas.height / 4) + 5) && (_particle.y >= (canvas.height / 4) - 5))) {
+            particles.splice(i, 1);
+            i--;
+        }
+    }
+
+}
+
+/* Draw particles on the position of destroyed target */
+function draw_particles() {
+    for (var i = 0; i < particles.length; i++) {
+        context.beginPath();
+        context.save();
+        context.globalAlpha = 1;
+        context.arc(particles[i].x, particles[i].y, particles[i].width, 0, Math.PI * 2);
+        context.fillStyle = particles[i].color;
+        context.fill();
+        context.restore();
+    }
+}
+
+
+setInterval(function() {
+    for (var i = 0; i < batiments_on_galaxy.length; i++) {
+        add_particle(batiments_on_galaxy[i]);
+    }
+}, 2500)
 
 
 
@@ -432,8 +527,6 @@ for (i = 0; i < upgrades_tab.upgrades.length; i++) {
                 upgrades_tab.upgrades[this.data_id].style.display = "none";
             }
         }
-
-
 
     }, false);
 }

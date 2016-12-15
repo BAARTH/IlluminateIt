@@ -15,13 +15,78 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     overflow: hidden;
 }
 
-.moon {
+.disable {
+    opacity: 0;
+}
+
+.loading {
     position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 10;
+    transition: opacity 5s ease-in;
+}
+
+.moon.loading {
+    width: 30px;
+    height: 30px;
+    opacity: 0.1;
+}
+
+.light_loading {
+    color: #ffffff;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+}
+
+.next_to {
+    animation: next_to_flash 0.3s ease-in-out alternate infinite;
+    opacity: 1;
+    color: #ffffff;
+}
+
+@keyframes next_to_flash {
+    to {
+        opacity: 0;
+    }
+}
+
+.moon_b {
+    display: inline-block;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    width: 0px;
+    background-color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 70px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.moon {
     display: inline-block;
     -webkit-filter: blur(5px);
     filter: blur(5px);
     -webkit-animation: flash_little 1s ease-in-out alternate infinite;
     animation: flash_little 1s ease-in-out alternate infinite;
+    width: 0px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 70px;
+    cursor: pointer;
+    opacity: 0.1;
 }
 
 @-webkit-keyframes flash_little {
@@ -66,22 +131,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         -webkit-filter: blur(37px);
         filter: blur(37px);
     }
-}
-
-.moon {
-    width: 0px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #ffffff;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 30px;
-    border-radius: 70px;
-    cursor: pointer;
-    border: 2px solid #ffffff;
-    opacity: 0.1;
 }
 
 .moon_light {
@@ -253,8 +302,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     font-weight: bold;
 }
 
-
-.improvments .price .price_number{
+.improvments .price .price_number {
     display: inline;
     font-weight: bold;
 }
