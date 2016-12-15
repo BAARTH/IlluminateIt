@@ -183,7 +183,7 @@ setInterval(function() {
     html_news_list.innerHTML += '<li></li>';
     html_news_list_li = document.querySelectorAll('.news ul li');
     frameLooper();
-}, 6000);
+}, 60000);
 
 
 function frameLooper(place) {
