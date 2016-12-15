@@ -3,7 +3,7 @@ var html_loading = document.querySelector('.loading');
 var click_loading = document.querySelector('.moon.loading');
 var html_light_loading = document.querySelector('.light_loading');
 var html_light_loading_txt = document.querySelector('.light_loading_txt');
-var light_loading = 0.9;
+var light_loading = 0;
 var min_light_loading = 0;
 var max_light_loading = 1;
 click_loading.addEventListener('click', loading_click);
