@@ -381,12 +381,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         margin-bottom: 13px;
     }
     .improvments_container_upgrades {
-        transform: translateX(100%);
+        transform: translateX(150%);
         transition: all 0.5s ease;
         z-index: 10;
     }
     .improvments.news {
-        transform: translateX(-100%);
+        transform: translateX(-150%);
         transition: all 0.5s ease;
         z-index: 10;
     }
@@ -429,17 +429,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         margin-bottom: 10px;
     }
     .improvments_container_upgrades {
-        transform: translateX(100%);
-        transition: all 0.5s ease;
-        z-index: 10;
         width: 100%;
         background-color: rgba(0, 0, 0, 1);
         z-index: 0;
     }
     .improvments.news {
-        transform: translateX(-100%);
-        transition: all 0.5s ease;
-        z-index: 10;
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 1);
