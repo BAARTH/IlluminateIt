@@ -160,9 +160,6 @@ if (localStorage.getItem("First play") == null) {
     var data_batiments = JSON.parse(localStorage.getItem("data_batiments"));
 }
 
-console.log(data_batiments);
-
-
 
 
 function getRandomNumber(min, max) {
@@ -266,7 +263,6 @@ click.addEventListener('click', function() {
 function decrease_the_light() {
 
     if (decrease == true) {
-        console.log(light,min_light);
         if (light > min_light) {
             click.style.opacity -= 1 / decrease_light;
             light -= 1 / decrease_light;
