@@ -32,6 +32,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     width: 30px;
     height: 30px;
     opacity: 0.1;
+    transition: opacity 0s ease-in;
 }
 
 .light_loading {

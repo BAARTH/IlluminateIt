@@ -38,9 +38,6 @@ setInterval(function() {
         }, 5000);
     }
 }, 50);
-
-
-
 // END LOADING //
 
 var canvas = document.querySelector('canvas');
@@ -101,8 +98,7 @@ var cx = 150;
 var cy = 150;
 var radius = 250;
 var last_increment_lvl = 0;
-
-var click_multiplicator = 1;
+var click_multiplicator = 3;
 var product_percent_click = 1;
 var clickpercent_buyed = false;
 
@@ -256,6 +252,7 @@ function start() {
     if (light > max_light) {
         light = max_light;
     }
+    max_lumen = Math.round(product_increment * 300);
     // draw_batiments(data_batiments[1].galaxyWidth, data_batiments[1].galaxyColor);
     redraw();
     // draw_particles();
