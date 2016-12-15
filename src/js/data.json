@@ -14,7 +14,7 @@ var data_batiments = [{
     "currentlvl": 0,
     "galaxyName": "sun_abbaye",
     "galaxyWidth": 2,
-    "galaxyColor": "#e4eab0",
+    "galaxyColor": "#4dead8",
     "content":"Increase number of illuminers by : 100 "
 }, {
     "id": "House of the sun",
@@ -31,7 +31,7 @@ var data_batiments = [{
     "lumenS": 47,
     "currentlvl": 0,
     "galaxyName": "solar_chapel",
-    "galaxyWidth": 3,
+    "galaxyWidth": 4,
     "galaxyColor": "#ffffff",
     "content":"Increase number of illuminers by : 12 000 "
 }, {
@@ -40,7 +40,7 @@ var data_batiments = [{
     "lumenS": 260,
     "currentlvl": 0,
     "galaxyName": "stellar_church",
-    "galaxyWidth": 3,
+    "galaxyWidth": 5,
     "galaxyColor": "#eac46e",
     "content":"Increase number of illuminers by : 130 000 "
 }, {
@@ -49,7 +49,7 @@ var data_batiments = [{
     "lumenS": 1400,
     "currentlvl": 0,
     "galaxyName": "star_cathedral",
-    "galaxyWidth": 4,
+    "galaxyWidth": 6,
     "galaxyColor": "#ea9f5d",
     "content":"Increase number of illuminers by : 140 000 "
 }, {
@@ -58,7 +58,7 @@ var data_batiments = [{
     "lumenS": 7800,
     "currentlvl": 0,
     "galaxyName": "plasma_place",
-    "galaxyWidth": 4,
+    "galaxyWidth": 7,
     "galaxyColor": "#88ea8c",
     "content":"Increase number of illuminers by : 20 000 000 "
 }, {
@@ -67,7 +67,7 @@ var data_batiments = [{
     "lumenS": 44000,
     "currentlvl": 0,
     "galaxyName": "cult_helium",
-    "galaxyWidth": 4,
+    "galaxyWidth": 8,
     "galaxyColor": "#5eeac6",
     "content":"Increase number of illuminers by : 330 000 000 "
 }, {
@@ -76,7 +76,7 @@ var data_batiments = [{
     "lumenS": 260000,
     "currentlvl": 0,
     "galaxyName": "novae",
-    "galaxyWidth": 4,
+    "galaxyWidth": 9,
     "galaxyColor": "#ea8ad4",
     "content":"Increase number of illuminers by : 5 100 000 000 "
 }, {
@@ -85,7 +85,7 @@ var data_batiments = [{
     "lumenS": 1600000,
     "currentlvl": 0,
     "galaxyName": "super_novae",
-    "galaxyWidth": 5,
+    "galaxyWidth": 10,
     "galaxyColor": "#ea8ad4",
     "content":"Increase number of illuminers by : 75 000 000 000 "
 }, {
@@ -94,7 +94,7 @@ var data_batiments = [{
     "lumenS": 10000000,
     "currentlvl": 0,
     "galaxyName": "sunshine_tower",
-    "galaxyWidth": 5,
+    "galaxyWidth": 11,
     "galaxyColor": "#eac46e",
     "content":"Increase number of illuminers by : 14 000 000 000 000"
 }, {
@@ -103,7 +103,7 @@ var data_batiments = [{
     "lumenS": 430000000,
     "currentlvl": 0,
     "galaxyName": "sun_capital",
-    "galaxyWidth": 6,
+    "galaxyWidth": 12,
     "galaxyColor": "#ea9863",
     "content":"Increase number of illuminers by : 170 000 000 000 000 "
 }, ];
