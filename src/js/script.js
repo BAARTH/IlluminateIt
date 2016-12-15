@@ -95,7 +95,7 @@ if (localStorage.getItem("First play") == null) {
     var html_news_list_li;
     var timer;
     var light = 0.1;
-    var min_light = 1;
+    var min_light = 0.1;
     var max_light = 1;
     var need = 10;
     var decrease_light = 100;
@@ -131,7 +131,7 @@ if (localStorage.getItem("First play") == null) {
     var html_news_list_li = localStorage.getItem("html_news_list_li");
     var timer = parseInt(localStorage.getItem("timer"));
     var light = 0.1;
-    var min_light = 1;
+    var min_light = 0.1;
     var max_light = parseInt(localStorage.getItem("max_light"));
     var need = parseInt(localStorage.getItem("need"));
     var decrease_light = parseInt(localStorage.getItem("decrease_light"));
@@ -264,10 +264,13 @@ click.addEventListener('click', function() {
 
 // Decrease Light
 function decrease_the_light() {
+
     if (decrease == true) {
-        if (click.style.opacity > min_light) {
+        console.log(light,min_light);
+        if (light > min_light) {
             click.style.opacity -= 1 / decrease_light;
             light -= 1 / decrease_light;
+    
         }
     }
     window.setTimeout(decrease_the_light, decrease_speed);
@@ -422,7 +425,7 @@ function redraw_on_buy() {
         }
         upgrades_tab.batiments[i].name.innerHTML = data_batiments[i].id;
         for (n = 0; n < upgrades_tab.batiments[i].price.length; n++) {
-            upgrades_tab.batiments[i].price[n].innerHTML = '<span class="price_number">' + data_batiments[i].basePrice + '</span> ill';
+            upgrades_tab.batiments[i].price[n].innerHTML = '<span class="price_number">' + data_batiments[i].basePrice.toFixed(0); + '</span> ill';
         }
         upgrades_tab.batiments[i].content.innerHTML = data_batiments[i].content;
     }
