@@ -370,7 +370,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     background-color: rgba(0, 0, 0, 0.9);
     height: 100vh;
     width: 100vw;
-    z-index: 950;
+    z-index: 849;
     position: absolute;
     top: 0;
     left: 0;
@@ -386,7 +386,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     left: 50%;
     transform: translateX(-50%) translateY(0%);
     transition: all 0.5s ease;
-    z-index: 951;
+    z-index: 850;
 }
 
 .open_achievements:hover {
