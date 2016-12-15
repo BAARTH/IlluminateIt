@@ -1,107 +1,107 @@
 var data_News = [
   {
     "id" : "News_1",
-    "content" : "Breaking solar cream on planet, scientists think it's good news to get close to the Star."
+    "content" : "Solar cream is now banned on the planet, scientists think it's good news to get closer to the Star."
   },
   {
     "id" : "News_2",
-    "content" : "The Antarctic and Arctic have completely melted and killed several species, humans are necessarily superior. Continue to pray."
+    "content" : "The Antarctic and Arctic have completely melted and killed several species, humans are necessarily superior. Resume prayers."
   },
   {
     "id" : "News_3",
-    "content" : "By dint of looking at the Star to venerate it, you become blind. No need to see for belive in the Star."
+    "content" : "By  looking at the Star to venerate it, you'll become blind. Studies show that you don't need to see to believe."
   },
   {
     "id" : "News_4",
-    "content" : "The Star plays the role of acceleraor of aging, you take 10 years, but the maturity can be only better."
+    "content" : "The Star plays accelerate aging, as you take 10 years, you'll only be closer to reunite with the Sun."
   },
   {
     "id" : "News_5",
-    "content" : "You have been diagnosed with skin cancer, it's a benediction the all mighty has entered your body."
+    "content" : "You have been diagnosed with skin cancer, it's a benediction, the All Mighty has entered your body."
   },
   {
     "id" : "News_6",
-    "content" : "All drills are dead but we not need oxygen as long as our reason for living grown up ."
+    "content" : "All forests are dying but we do not need oxygen as long as our reason for living is growing up."
   },
   {
     "id" : "News_7",
-    "content" : "The population of the earth can't be more closer thanks our uniform skin color."
+    "content" : "The population of the earth can't be more united thanks to the uniform skin color the sun gave us all."
   },
   {
     "id" : "News_8",
-    "content" : "The radiations become more and more strong, there are trijambist cases, an additional strength given by our revered."
+    "content" : "The radiations become more and more strong, there are trijambist cases, an additional strength given by Our revered."
   },
   {
     "id" : "News_9",
-    "content" : "The water are more and more uncommon, fortunately the heat make sewat."
+    "content" : "The water is more and more uncommon, fortunately the heat makes us sweat."
   },
   {
     "id" : "News_10",
-    "content" : "The size of the Star gains weight to this point we no longer have the notion of time, but it's not a problem, all our time must devote to the Star."
+    "content" : "Because of the size of the Star, to this point we no longer have the notion of time, but it's not a problem, all our time must be devoted to the Star."
   },
   {
     "id" : "New_11",
-    "content" : "The human has evolved by dint of looking in the air, all newborns born without neck."
+    "content" : "The human has evolved, all newborns are born without necks to admire Our mighty Sun even more."
   },
   {
     "id" : "News_12",
-    "content" : "The Olympic Games they concerne only the launched weight."
+    "content" : "The Olympic Games are now organizing only the Shot put in the purpose of feeding our star."
   },
   {
     "id" : "News_13",
-    "content" : "Joe Kovacs committed in the research for feed the Star."
+    "content" : "Joe Kovacs comitted in the research to feed the Star."
   },
   {
     "id" : "News_14",
-    "content" : "The population become blond during some time but now every body is bald."
+    "content" : "The population became blond at some point but now everybody is bald thanks to the powers of the Only One."
   },
   {
     "id" : "News_15",
-    "content" : "The UV cabin are bannished in the world, using that it's betray the Star."
+    "content" : "The UV cabins are banished in the entire world, as using them is a blasphemy."
   },
   {
     "id" : "News_16",
-    "content" : "The nights are more and more short thanks our prayers."
+    "content" : "Nights are more and more shorter thanks to our prayers."
   },
   {
     "id" : "News_17",
-    "content" : "The protest marche for the beach umbrella are more and more recurrent."
+    "content" : "The protests to ban umbrellas are more and more recurrent."
   },
   {
     "id" : "News_18",
-    "content" : "The death penalty established in whole world to the supporter of the rain."
+    "content" : "Death penalty is now established in whole world for the rain supporters."
   },
   {
     "id" : "News_19",
-    "content" : "The buildings increases in floor, to can pray closer of the Star."
+    "content" : "The buildings increases in floors, for one to pray closer of the Star."
   },
   {
     "id" : "News_20",
-    "content" : "Big migration of the population to the country near to the equator."
+    "content" : "Global exodus to reach areas near the equador, now called the 'Holy land'"
   },
   {
     "id" : "News_21",
-    "content" : "No need to be afraid of his shadow, she does not exist."
+    "content" : "One shall not be afraid of his shadow, thus does not exist anymore."
   },
   {
     "id" : "News_22",
-    "content" : "The Star allows to fortify the bones, he can only be good for us."
+    "content" : "The Star allows to fortify the bones with godly D vitamins, thus he can only be good for us."
   },
   {
     "id" : "News_23",
-    "content" : "The production of solar panels explosed"
+    "content" : "The production of solar panels explosed and shortages are to be expected"
   },
   {
     "id" : "News_24",
-    "content" : "Explosions caused by power stations overexposed, it's the fate to the infidels."
+    "content" : "Many explosions caused in power stations because of overexposition, it's the fate of the infidels."
   },
   {
     "id" : "News_25",
-    "content" : "The radioactivity is so strong that news creatures appear, we repopulate the earth ."
+    "content" : "The radioactivity is so strong that new species begin to emmerge, we can repopulate the earth with his creations."
   },
   {
     "id" : "News_26",
-    "content" : "The eath and the Star will make only one."
+    "content" : "One day, the earth and the Star will make only one."
   },
   {
     "id" : "News_27",
@@ -109,27 +109,27 @@ var data_News = [
   },
   {
     "id" : "News_28",
-    "content" : "Right in the target!"
+    "content" : "'Right in the target!' said Nasa official as the first probe was launched into the star."
   },
   {
     "id" : "News_29",
-    "content" : "The athees dicover the religion of the Star : 'What we missed during all these years?'."
+    "content" : "Non-believers discover the religion of the Star : 'What did we miss during all these years?'."
   },
   {
     "id" : "News_30",
-    "content" : "You will never have a cold again, and that it's cool."
+    "content" : "'You will never have a cold again !' promises High Priest, and that is cool."
   },
   {
     "id" : "News_31",
-    "content" : "Rihanna stop music to dedicate oneself to the progression of the Star."
+    "content" : "Rihanna stop music to dedicate oneself to the progression of the Star by chanting to its success."
   },
   {
     "id" : "News_32",
-    "content" : "A man found dead cause burn, researchers conclude that it was the Mooners."
+    "content" : "A man found dead because of burns, researchers conclude that it was the Mooners."
   },
   {
     "id" : "News_33",
-    "content" : "The sky became almost fully red, it's beautiful."
+    "content" : "The sky is now almost fully red, it's beautiful."
   },
   {
     "id" : "News_34",
@@ -137,31 +137,31 @@ var data_News = [
   },
   {
     "id" : "News_35",
-    "content" : "Thanks the Star we no need furnace or cooking plate, all cooked naturally!"
+    "content" : "Thanks the Star we don't need furnace nor cooking plate, everything's cooked naturally!"
   },
   {
     "id" : "News_36",
-    "content" : "The UVC touch the earth, now we are closest to the Star."
+    "content" : "The UVC touched the earth, we are now closer to the Star."
   },
   {
     "id" : "News_37",
-    "content" : "The president of USA propose the world population live naked for fell completly the Star."
+    "content" : "United States president recommend the world population to live fully naked to complete with the Star."
   },
   {
     "id" : "News_38",
-    "content" : "The heat increases the risk de diarrhea, we have settled the problem of obesity."
+    "content" : "The heat increases the risk of diarrhea, settling the problem of obesity."
   },
   {
     "id" : "News_39",
-    "content" : "A third world war against the Mooners ?"
+    "content" : "A third world war against the Mooners to be feared ?"
   },
   {
     "id" : "News_40",
-    "content" : "The heat cause loss of consciousness, The Star chooses when it's necessary to lie down, he is benevolent."
+    "content" : "The heat causes loss of consciousness, The Star chooses when it's necessary to lie down, he is benevolent."
   },
   {
     "id" : "News_41",
-    "content" : "The Star dehydrates our body, good news : almost no need to go in the toilet."
+    "content" : "The Star dehydrates our body, good news : almost no need to go to the toilets anymore."
   },
   {
     "id" : "News_42",
@@ -173,7 +173,7 @@ var data_News = [
   },
   {
     "id" : "News_44",
-    "content" : "The Star stop the deficiencies thanks to the Vitamin D he offer us."
+    "content" : "Lot of Mooners killed in a mass rally against them. Population suggested to feed their bodies to the mighty One."
   },
   {
     "id" : "News_45",
