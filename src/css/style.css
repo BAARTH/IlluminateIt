@@ -239,7 +239,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     margin-top: 15px;
     height: 60px;
     float: right;
-    background-color: #fff;
     margin-left: 10px;
 }
 
@@ -412,14 +411,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .achievements .achievement_content {
     color: #fff;
     font-size: 13px;
-    text-align: center;
+    text-align: right;
 }
 
 .achievements .achievement_icon img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: #fff;
     transform: translateY(40%);
+    margin-right: 10px;
 }
 
 

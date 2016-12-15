@@ -1,0 +1,64 @@
+var achievements_data = [{
+        "id": "Gather 1000 illuminers",
+        "src": "src/img/1000illu.svg",
+        "acquire": "false"
+    }, {
+        "id": "Destroy 1000 Mooners",
+        "src": "src/img/1000mooners.svg",
+        "acquire": "false"
+    }, {
+        "id": "Buy your first building and start gathering Lumens !",
+        "src": "src/img/grandMaster.svg",
+        "acquire": "false"
+    }, {
+        "id": "Unlock 10 upgrades",
+        "src": "src/img/succ10.svg",
+        "acquire": "false"
+    }, {
+        "id": "Unlock 15 upgrades",
+        "src": "src/img/succ15.svg",
+        "acquire": "false"
+    }, {
+        "id": "Unlock 5 upgrades",
+        "src": "src/img/succ5.svg",
+        "acquire": "false"
+    }, {
+        "id": "Acquire 10 buildings",
+        "src": "src/img/succBat10.svg",
+        "acquire": "false"
+    }, {
+        "id": "Acquire 15 buildings",
+        "src": "src/img/succBat15.svg",
+        "acquire": "false"
+    }, {
+        "id": "Acquire 5 buildings",
+        "src": "src/img/succBat5.svg",
+        "acquire": "false"
+    }, {
+        "id": "Enlighted : Keep the sun's intensity up to more than 90% for 10 minutes",
+        "src": "src/img/succSunMin10.svg",
+        "acquire": "false"
+    }, {
+        "id": "Light Maker : Keep the sun's intensity up to more than 90% for 15 minutes",
+        "src": "src/img/succSunMin15.svg",
+        "acquire": "false"
+    }, {
+        "id": "Electrician : Keep the sun's intensity up to more than 90% for 5 minutes",
+        "src": "src/img/succSunMin5.svg",
+        "acquire": "false"
+    }
+    //, {
+    //     "id": "Great Priest : unlock and buy every building",
+    //     "src": "src/img/landlord.svg",
+    //     "acquire": "false"
+    // }, {
+    //     "id": "Grand Master : Unlock every upgrade",
+    //     "src": "src/img/grandMaster.svg",
+    //     "acquire": "false"
+    // }, {
+    //     "id": "Illuminated : Discover all secrets",
+    //     "src": "src/img/illuminated.svg",
+    //     "acquire": "false"
+    // }
+
+];

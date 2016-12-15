@@ -1,58 +1,58 @@
 // // LOADING //
-var html_loading = document.querySelector('.loading');
-var click_loading = document.querySelector('.moon.loading');
-var html_light_loading = document.querySelector('.light_loading');
-var html_light_loading_txt = document.querySelector('.light_loading_txt');
-var skip_intro = document.querySelector('.skip_intro');
-var light_loading = 0.1;
-var min_light_loading = 0;
-var max_light_loading = 1;
-var disabled_loading = false;
+// var html_loading = document.querySelector('.loading');
+// var click_loading = document.querySelector('.moon.loading');
+// var html_light_loading = document.querySelector('.light_loading');
+// var html_light_loading_txt = document.querySelector('.light_loading_txt');
+// var skip_intro = document.querySelector('.skip_intro');
+// var light_loading = 0.1;
+// var min_light_loading = 0;
+// var max_light_loading = 1;
+// var disabled_loading = false;
 
-click_loading.addEventListener('click', loading_click);
+// click_loading.addEventListener('click', loading_click);
 
-function loading_click() {
-    if (light_loading < max_light_loading) {
-        light_loading += 0.02;
-        if (light_loading < max_light_loading) {
-            light_loading += 0.01;
-        }
-        click_loading.style.opacity = light_loading;
-    } else if (light_loading >= max_light_loading) {
-        click_loading.removeEventListener('click', loading_click);
-    }
-}
+// function loading_click() {
+//     if (light_loading < max_light_loading) {
+//         light_loading += 0.02;
+//         if (light_loading < max_light_loading) {
+//             light_loading += 0.01;
+//         }
+//         click_loading.style.opacity = light_loading;
+//     } else if (light_loading >= max_light_loading) {
+//         click_loading.removeEventListener('click', loading_click);
+//     }
+// }
 
-function decrease_the_light_loading() {
-    if (click_loading.style.opacity > min_light_loading) {
-        click_loading.style.opacity -= 0.001;
-        light_loading -= 0.001;
-    }
-}
-setInterval(function() {
-    decrease_the_light_loading();
-    html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
-    if ((light_loading > max_light_loading) && (disabled_loading == false)) {
-        disable_loading()
-        disabled_loading = true;
-    }
-}, 50);
+// function decrease_the_light_loading() {
+//     if (click_loading.style.opacity > min_light_loading) {
+//         click_loading.style.opacity -= 0.001;
+//         light_loading -= 0.001;
+//     }
+// }
+// setInterval(function() {
+//     decrease_the_light_loading();
+//     html_light_loading_txt.innerHTML = Math.round(light_loading * 100) + '%';
+//     if ((light_loading > max_light_loading) && (disabled_loading == false)) {
+//         disable_loading()
+//         disabled_loading = true;
+//     }
+// }, 50);
 
-skip_intro.addEventListener('click', function() {
-    disable_loading()
-    disabled_loading = true;
-});
+// skip_intro.addEventListener('click', function() {
+//     disable_loading()
+//     disabled_loading = true;
+// });
 
-function disable_loading() {
-    {
-        html_loading.className += " disable";
-        html_light_loading.className += " disable";
-        setTimeout(function() {
-            html_loading.style.display = 'none';
-        }, 5000);
+// function disable_loading() {
+//     {
+//         html_loading.className += " disable";
+//         html_light_loading.className += " disable";
+//         setTimeout(function() {
+//             html_loading.style.display = 'none';
+//         }, 5000);
 
-    }
-}
+//     }
+// }
 // END LOADING //
 
 var canvas = document.querySelector('canvas');
@@ -86,6 +86,9 @@ var html_batiments_list = document.querySelector('.batiments ul');
 var html_upgrades_list = document.querySelector('.upgrades ul');
 var html_news_list = document.querySelector('.news ul');
 var html_galaxy = document.querySelector('.galaxy');
+var html_achievements = {};
+html_achievements.achievements_container = document.querySelector('.achievements ul');
+
 var upgrades_tab = {};
 
 if (localStorage.getItem("First play") == null) {
@@ -122,10 +125,166 @@ if (localStorage.getItem("First play") == null) {
     var click_multiplicator = 3;
     var product_percent_click = 1;
     var clickpercent_buyed = false;
+    var upgrades_buyed = 0;
+    var light_duration = 0;
+    var data_upgrades_lumen = [
+
+    {
+        "id": "Nova",
+        "upgradePrice": 10000,
+        "value": 2,
+        "img": "src/img/nova.svg",
+        "content": "Multiply the production rate of lumens by two",
+        "appear": "true"
+    }, {
+        "id": "Supernova",
+        "upgradePrice": 1000000,
+        "value": 3,
+        "img": "src/img/nova_super.svg",
+        "content": "Multiply the production rate of lumens by three",
+        "appear": "false"
+    }, {
+        "id": "Plasma Injector I",
+        "upgradePrice": 50000,
+        "value": null,
+        "img": "src/img/plasma_injector_1.svg",
+        "content": "Reduces the intensity decrease rate of the sun by 30%",
+        "appear": "true"
+    }, {
+        "id": "Plasma Injector II",
+        "upgradePrice": 350000,
+        "value": null,
+        "img": "src/img/plasma_injector_2.svg",
+        "content": "Reduces the intensity decrease rate of the sun by 60%",
+        "appear": "false"
+    }, {
+        "id": "Plasma Injector III",
+        "upgradePrice": 2000000,
+        "value": null,
+        "img": "src/img/plasma_injector_3.svg",
+        "content": "Reduces the intensity decrease rate of the sun by 90%",
+        "appear": "false"
+    }, {
+        "id": "Yellow star",
+        "upgradePrice": 80000,
+        "value": 10,
+        "img": "src/img/star_yellow.svg",
+        "content": "The maximum intensity of the sun goes to 110%",
+        "appear": "true"
+    }, {
+        "id": "Orange star",
+        "upgradePrice": 400000,
+        "value": 10,
+        "img": "src/img/star_orange.svg",
+        "content": "The maximum intensity of the sun goes to 120%",
+        "appear": "false"
+    }, {
+        "id": "Blue star",
+        "upgradePrice": 1200000,
+        "value": 10,
+        "img": "src/img/star_blue.svg",
+        "content": "The maximum intensity of the sun goes to 130%",
+        "appear": "false"
+    }, {
+        "id": "Purple star",
+        "upgradePrice": 2500000,
+        "value": 10,
+        "img": "src/img/star_purple.svg",
+        "content": "The maximum intensity of the sun goes to 150%",
+        "appear": "false"
+    }, {
+        "id": "Hydrogen Isotopes",
+        "upgradePrice": 50,
+        "value": 10,
+        "img": "src/img/isotope_hydrogen.svg",
+        "content": "Double the value of a click on the sun",
+        "appear": "true"
+    }, {
+        "id": "Helium Isotopes",
+        "upgradePrice": 75000,
+        "value": 0,
+        "img": "src/img/isotope_helium.svg",
+        "content": "Double the value of a click on the sun a second time",
+        "appear": "false"
+    }, {
+        "id": "Carbon Isotopes",
+        "upgradePrice": 120000,
+        "value": 0,
+        "img": "src/img/isotope_carbon.svg",
+        "content": "1% of the lumen production rate is added to click power",
+        "appear": "false"
+    }, {
+        "id": "Neon Isotopes",
+        "upgradePrice": 1000000,
+        "value": 0,
+        "img": "src/img/isotope_neon.svg",
+        "content": "Another 1% of the lumen production rate is added to click power",
+        "appear": "false"
+    }, {
+        "id": "Condensators",
+        "upgradePrice": 5000,
+        "value": 0,
+        "img": "src/img/condensator.svg",
+        "content": "Minimal value of sun's illumination is now 20%",
+        "appear": "true"
+    }, {
+        "id": "Super Condensators",
+        "upgradePrice": 80000,
+        "value": 0,
+        "img": "src/img/condensator_super.svg",
+        "content": "Minimal value of sun's illumination is now 30%",
+        "appear": "false"
+    }, {
+        "id": "Ultra Condensators",
+        "upgradePrice": 300000,
+        "value": 0,
+        "img": "src/img/condensator_ultra.svg",
+        "content": "Minimal value of sun's illumination is now 50%",
+        "appear": "false"
+    }, {
+        "id": "Illumination I",
+        "upgradePrice": 60000,
+        "value": 0,
+        "img": "src/img/illumination1.svg",
+        "content": "Increase convertion rate of lumens in faith by 20%",
+        "appear": "true"
+    }, {
+        "id": "Illumination II",
+        "upgradePrice": 250000,
+        "value": 0,
+        "img": "src/img/illumination2.svg",
+        "content": "Increase convertion rate of lumens in faith by another 20%",
+        "appear": "false"
+    }, {
+        "id": "Illumination III",
+        "upgradePrice": 1300000,
+        "value": 0,
+        "img": "src/img/illumination3.svg",
+        "content": "Increase convertion rate of lumens in faith by another 20%",
+        "appear": "false"
+    }, {
+        "id": "Illumination IV",
+        "upgradePrice": 2000000,
+        "value": 0,
+        "img": "src/img/illumination4.svg",
+        "content": "Increase convertion rate of lumens in faith by another 20%",
+        "appear": "false"
+    }, {
+        "id": "Illumination V",
+        "upgradePrice": 80000000,
+        "value": 0,
+        "img": "src/img/illumination5.svg",
+        "content": "Increase convertion rate of lumens in faith by another 20%",
+        "appear": "false"
+    }
+
+
+];
 
     localStorage.setItem("First play", "no");
 } else if (localStorage.getItem("First play") == "no") {
     var batiments_on_galaxy = JSON.parse(localStorage.getItem("batiments_on_galaxy"));
+    var data_upgrades_lumen = JSON.parse(localStorage.getItem("data_upgrades_lumen"));
     var particles = [];
     var array = localStorage.getItem("array");
     var html_news_list_li = localStorage.getItem("html_news_list_li");
@@ -158,6 +317,7 @@ if (localStorage.getItem("First play") == null) {
     var product_percent_click = parseInt(localStorage.getItem("product_percent_click"));
     var clickpercent_buyed = localStorage.getItem("clickpercent_buyed");
     var data_batiments = JSON.parse(localStorage.getItem("data_batiments"));
+    var upgrades_buyed = parseInt(localStorage.getItem("upgrades_buyed"));
 }
 
 
@@ -218,21 +378,19 @@ for (i = 0; i < upgrades_tab.upgrades.length; i++) {
     upgrades_tab.upgrades[i].setAttribute('data-id', i);
     upgrades_tab.upgrades[i].data_id = upgrades_tab.upgrades[i].getAttribute('data-id');
     upgrades_tab.upgrades[i].desc = upgrades_tab.upgrades[i].querySelector('.desc');
-    if (data_upgrades_lumen[i].id == "Nova") {
-        upgrades_tab.upgrades[i].style.display = "block";
-    } else if (data_upgrades_lumen[i].id == "Plasma Injector I") {
-        upgrades_tab.upgrades[i].style.display = "block";
-    } else if (data_upgrades_lumen[i].id == "Yellow star") {
-        upgrades_tab.upgrades[i].style.display = "block";
-    } else if (data_upgrades_lumen[i].id == "Hydrogen Isotopes") {
-        upgrades_tab.upgrades[i].style.display = "block";
-    } else if (data_upgrades_lumen[i].id == "Condensators") {
-        upgrades_tab.upgrades[i].style.display = "block";
-    } else if (data_upgrades_lumen[i].id == "Illumination I") {
 
+}
+
+function check_upgrades() {
+    for (i = 0; i < upgrades_tab.upgrades.length; i++)
+        if (data_upgrades_lumen[i].appear == "true") {
+            upgrades_tab.upgrades[i].style.display = "block";
+        } else if (data_upgrades_lumen[i].appear == "false") {
+        upgrades_tab.upgrades[i].style.display = "none";
     }
 }
 
+check_upgrades();
 
 // Prevent DOUBLE CLICK -> SELECT
 document.addEventListener('mousedown', function(e) {
@@ -263,17 +421,26 @@ click.addEventListener('click', function() {
 function decrease_the_light() {
 
     if (decrease == true) {
+        light_duration = 0;
         if (light > min_light) {
             click.style.opacity -= 1 / decrease_light;
             light -= 1 / decrease_light;
-    
+
         }
     }
     window.setTimeout(decrease_the_light, decrease_speed);
 }
 decrease_the_light();
 
+function check_light_duration() {
+    setTimeout(function() {
+        window.requestAnimationFrame(check_light_duration);
+        if (decrease == false) {
+            light_duration++;
+        }
+    }, 1000);
 
+}
 // Product lumen 
 setInterval(function() {
     if (lumen < max_lumen) {
@@ -315,11 +482,13 @@ function start() {
     // draw_batiments(data_batiments[1].galaxyWidth, data_batiments[1].galaxyColor);
     redraw();
     // draw_particles();
+    achievements_require();
     update_particles();
     draw_particles();
     draw_batiments()
         // LOCAL STORAGE
     localStorage.setItem("batiments_on_galaxy", JSON.stringify(batiments_on_galaxy));
+    localStorage.setItem("data_upgrades_lumen", JSON.stringify(data_upgrades_lumen));
     localStorage.setItem("array", array);
     localStorage.setItem("html_news_list_li", html_news_list_li);
     localStorage.setItem("timer", timer);
@@ -351,6 +520,7 @@ function start() {
     localStorage.setItem("product_percent_click", product_percent_click);
     localStorage.setItem("clickpercent_buyed", clickpercent_buyed);
     localStorage.setItem("data_batiments", JSON.stringify(data_batiments));
+    localStorage.getItem("upgrades_buyed", upgrades_buyed);
 }
 redraw_on_buy();
 start();
@@ -520,105 +690,202 @@ for (i = 0; i < upgrades_tab.upgrades.length; i++) {
             illumination -= data_upgrades_lumen[this.data_id].upgradePrice;
             if (data_upgrades_lumen[this.data_id].id == "Nova") {
                 upgrade_nova();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Supernova") {
                 upgrade_supernova();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Plasma Injector I") {
                 upgrade_plasma_injector();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Plasma Injector II") {
                 upgrade_plasma_injector();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Plasma Injector III") {
                 upgrade_plasma_injector();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Yellow star") {
                 for (i = 0; i < 1; i++) {
                     upgrade_star();
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Orange star") {
                 for (i = 0; i < 2; i++) {
                     upgrade_star();
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Blue star") {
                 for (i = 0; i < 3; i++) {
                     upgrade_star();
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Purple star") {
                 for (i = 0; i < 5; i++) {
                     upgrade_star();
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Hydrogen Isotopes") {
                 upgrade_dblclick();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Helium Isotopes") {
                 upgrade_dblclick();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear == "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Carbon Isotopes") {
                 upgrade_clickpercent1();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                udata_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Neon Isotopes") {
                 upgrade_clickpercent2();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Condensators") {
                 upgrade_minSunUp();
                 if (light < min_light) {
                     light = min_light;
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Super Condensators") {
                 upgrade_minSunUp();
                 if (light < min_light) {
                     light = min_light;
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Ultra Condensators") {
                 upgrade_minSunUp();
                 if (light < min_light) {
                     light = min_light;
                 }
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Illumination I") {
                 upgrade_rateUp();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Illumination II") {
                 upgrade_rateUp();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Illumination III") {
                 upgrade_rateUp();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Illumination IV") {
                 upgrade_rateUp();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
-                upgrades_tab.upgrades[parseInt(this.data_id) + 1].style.display = "block";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                data_upgrades_lumen[parseInt(this.data_id) + 1].appear = "true";
+                check_upgrades();
+                upgrades_buyed++;
             } else if (data_upgrades_lumen[this.data_id].id == "Illumination V") {
                 upgrade_rateUp();
-                upgrades_tab.upgrades[this.data_id].style.display = "none";
+                data_upgrades_lumen[this.data_id].appear = "false";
+                check_upgrades();
+                upgrades_buyed++;
             }
         }
-
+console.log(data_upgrades_lumen);
     }, false);
 }
+
+// Achievements
+
+function check_achievement(achievement_number) {
+    achievements_data[achievement_number].acquire = "true";
+    var li_id = 0;
+    html_achievements.achievements_container.innerHTML = '';
+    for (i = 0; i < achievements_data.length; i++) {
+
+        if (achievements_data[i].acquire == "true") {
+            html_achievements.achievements_container.innerHTML += '<li data-id ="' + li_id + '"><span class="achievement_icon"><img src="" alt=""></span><span class="achievement_content"></span></li>';
+            html_achievements.achievements_li = document.querySelectorAll('.achievements ul li');
+
+            html_achievements.achievements_li[li_id].querySelector(".achievement_content").innerHTML = achievements_data[i].id;
+            html_achievements.achievements_li[li_id].querySelector(".achievement_icon img").src = achievements_data[i].src;
+            li_id++;
+        }
+    }
+}
+
+
+function achievements_require() {
+    if ((product_increment > 1000) && achievements_data[0].acquire != "true") {
+        check_achievement(0);
+    } else if ((batiments_on_galaxy.length > 0) && achievements_data[2].acquire != "true") {
+        check_achievement(2);
+    } else if ((upgrades_buyed >= 10) && achievements_data[3].acquire != "true") {
+        check_achievement(3);
+    } else if ((upgrades_buyed >= 15) && achievements_data[4].acquire != "true") {
+        check_achievement(4);
+    } else if ((upgrades_buyed >= 5) && achievements_data[5].acquire != "true") {
+        check_achievement(5);
+    } else if ((batiments_on_galaxy.length >= 10) && achievements_data[6].acquire != "true") {
+        check_achievement(6);
+    } else if ((batiments_on_galaxy.length >= 15) && achievements_data[7].acquire != "true") {
+        check_achievement(7);
+    } else if ((batiments_on_galaxy.length >= 5) && achievements_data[8].acquire != "true") {
+        check_achievement(8);
+    } else if ((light_duration >= 600) && achievements_data[9].acquire != "true") {
+        check_achievement(9);
+    } else if ((light_duration >= 900) && achievements_data[10].acquire != "true") {
+        check_achievement(10);
+    } else if ((light_duration >= 300) && achievements_data[11].acquire != "true") {
+        check_achievement(11);
+    }
+}
+
+function achievements_storage() {
+    for (i = 0; i < achievements_data.length; i++) {
+        if (achievements_data[i] == "true") {
+            check_achievement(i);
+        }
+    }
+}
+achievements_storage();
 
 
 // Responsive 
