@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>Illuminate it</title>
+    <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/font-awesome.min.css">
+    <!-- Reset.css -->
     <link rel="stylesheet" href="src/css/reset.css">
+    <!-- Style.css -->
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
+    <!-- Eclipse -->
     <div class="eclipse">
         <img src="src/img/moon.png">
         <canvas class="warning_canvas"></canvas>
     </div>
+    <!-- Galaxy -->
     <div class="galaxy">
         <canvas class="galaxy_canvas" width="100vw" height="100%">
     </div>
+    <!-- Loading -->
     <div class="loading">
         <div class="come_on_loading">
             <span class="come_on"></span><span class="next_to">_</span>
@@ -31,6 +36,7 @@
         <div class="skip_intro">skip intro
             <span class="next_to">_</span></div>
     </div>
+    <!-- Help -->
     <div class="help_container">
         <div class="help_section">
             <h2>How to play_</h2>
@@ -52,6 +58,7 @@
             <p class="help_enjoy"> Enjoy the game and don't forget to <em>Praise the sun !</em></p>
         </div>
     </div>
+    <!-- Statistics -->
     <div class="stats">
         <p class="light"></p>
         <p class="lumen"></p>
@@ -60,6 +67,7 @@
         <p class="illumination">200 illumination</p>
         <p class="mooners">Mooners</p>
     </div>
+    <!-- Improvements & News -->
     <span class="open_tab open_upgrades">open upgrades_</span>
     <span class="open_tab open_news">open news_</span>
     <div class="help_btn">Help</div>
@@ -82,19 +90,24 @@
             </ul>
         </div>
     </div>
+    <!-- Achievements -->
     <span class="open_achievements">see achievements_</span>
     <div class="achievements">
         <ul>
         </ul>
     </div>
+    <!-- Sun -->
     <div class="moon_b"></div>
     <div class="moon official"></div>
+    <!-- Sound -->
     <audio class="intro_music" src="src/music/intro_illuminate.mp3"></audio>
     <audio src="src/music/game_sound.mp3" loop autoplay="true"></audio>
     <audio class="click_sound" src="src/music/click_sun.wav"></audio>
+    <!-- Json -->
     <script src="src/js/data.json"></script>
     <script src="src/js/news_anglais.json"></script>
     <script src="src/js/achievements.json"></script>
+    <!-- Scripts -->
     <script src="src/js/script.js"></script>
     <script src="src/js/prices.js"></script>
 </body>

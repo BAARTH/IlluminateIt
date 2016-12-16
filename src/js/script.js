@@ -1,4 +1,6 @@
- // LOADING //
+ // Loading
+
+ // Loading declarations
  var html_loading = document.querySelector('.loading');
  var click_loading = document.querySelector('.moon.loading');
  var html_light_loading = document.querySelector('.light_loading');
@@ -9,6 +11,9 @@
  var min_light_loading = 0;
  var max_light_loading = 1;
  var disabled_loading = false;
+
+
+ // Loading writing animation
  var array_come_on;
  var string_come_on = "come on, illuminate it";
  var timer_come_on;
@@ -24,6 +29,7 @@
      timer_come_on = setTimeout('frameLooperLoading()', 100);
  }
 
+ // Loading on click
  click_loading.addEventListener('click', loading_click);
 
  function loading_click() {
@@ -40,6 +46,7 @@
      }
  }
 
+ // Decrease loading light
  function decrease_the_light_loading() {
      if (click_loading.style.opacity > min_light_loading) {
          click_loading.style.opacity -= 0.001;
@@ -62,6 +69,7 @@
      disabled_loading = true;
  });
 
+ // Disable loading
  function disable_loading() {
      {
          html_loading.className += " disable";
@@ -79,8 +87,8 @@
 
      }
  }
- // END LOADING //
 
+ // Canvas declarations
  var canvas = document.querySelector('canvas.galaxy_canvas');
  var context = canvas.getContext('2d');
 
@@ -104,7 +112,7 @@
  var click_sound = document.querySelector('.click_sound');
  var music_intro = document.querySelector('.intro_music');
 
-
+ // Html querySelector
  var click = document.querySelector('.moon.official');
  var html_lumen = document.querySelector('.lumen');
  var html_light = document.querySelector('.light');
@@ -121,7 +129,8 @@
 
  var upgrades_tab = {};
 
- if (localStorage.getItem("First play") == null) {
+ // localStorage
+ if (localStorage.getItem("First play") == null) { // If the page is visited for the first time
      var batiments_on_galaxy = [];
      var particles = [];
      var array;
@@ -163,7 +172,7 @@
      var eclipse_durability = 80;
 
      localStorage.setItem("First play", "no");
- } else if (localStorage.getItem("First play") == "no") {
+ } else if (localStorage.getItem("First play") == "no") { // If the page has been already visit
      var batiments_on_galaxy = JSON.parse(localStorage.getItem("batiments_on_galaxy"));
      var data_upgrades_lumen = JSON.parse(localStorage.getItem("data_upgrades_lumen"));
      var particles = [];
@@ -204,11 +213,12 @@
      var eclipse_durability = parseInt(localStorage.getItem("eclipse_durability"));;
  }
 
+ // Random number function
  function getRandomNumber(min, max) {
      return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
-
+ // Html writing with JSON
  for (i = 0; i < data_batiments.length; i++) {
      html_batiments_list.innerHTML += '<li><div class="infos"><span class="id"></span><span class="price"></span><span class="content"></span></div><div class="desc"><span class="buy">buy_</span><span class="price"></span></div></li>'
  }
@@ -216,6 +226,7 @@
      html_upgrades_list.innerHTML += '<li><div class="infos"><img class="icons" src="" alt=""><span class="id"></span><span class="price"></span><span class="content"></span></div><div class="desc"><span class="buy">buy_</span><span class="price"></span></div></li>'
  }
 
+ // News writing animation
  setInterval(function() {
      var string = data_News[getRandomNumber(0, data_News.length)].content;
      array = string.split("");
@@ -231,15 +242,11 @@
      } else {
          clearTimeout(timer);
      }
-     timer = setTimeout('frameLooperNews()', 100); /* change 70 for speed */
+     timer = setTimeout('frameLooperNews()', 100);
  }
 
 
-
-
-
-
-
+ // Html complete with JSON informations
  upgrades_tab.batiments = document.querySelectorAll('.batiments ul li');
  upgrades_tab.upgrades = document.querySelectorAll('.upgrades ul li');
 
@@ -263,6 +270,7 @@
 
  }
 
+ // Check if an upgrade has been buy
  function check_upgrades() {
      for (i = 0; i < upgrades_tab.upgrades.length; i++)
          if (data_upgrades_lumen[i].appear == "true") {
@@ -274,7 +282,7 @@
 
  check_upgrades();
 
- // Prevent DOUBLE CLICK -> SELECT
+ // Prevent DOUBLE CLICK -> Select everything
  document.addEventListener('mousedown', function(e) {
      e.preventDefault();
  }, false);
@@ -283,7 +291,6 @@
  // Click event
  click.addEventListener('click', function() {
      click_state = false;
-     // click_sound.play();
      click_state_time = 0;
      decrease = false;
      if (lumen < max_lumen) {
@@ -324,22 +331,22 @@
      }, 1000);
 
  }
- // Set star color
 
- function set_star_color() {
+ // // Set star color 
+ // function set_star_color() {
 
-     if (star_color == 1) {
-         document.querySelector('.moon').style.background = '#dfdd8a';
-     } else if (star_color == 2) {
-         document.querySelector('.moon').style.background = '#df867d';
-     } else if (star_color == 3) {
-         document.querySelector('.moon').style.background = '#91cfdf';
-     } else if (star_color == 4) {
-         document.querySelector('.moon').style.background = '#b781df';
-     } else {
-         document.querySelector('.moon').style.background = '#fff';
-     }
- }
+ //     if (star_color == 1) {
+ //         document.querySelector('.moon').style.background = '#dfdd8a';
+ //     } else if (star_color == 2) {
+ //         document.querySelector('.moon').style.background = '#df867d';
+ //     } else if (star_color == 3) {
+ //         document.querySelector('.moon').style.background = '#91cfdf';
+ //     } else if (star_color == 4) {
+ //         document.querySelector('.moon').style.background = '#b781df';
+ //     } else {
+ //         document.querySelector('.moon').style.background = '#fff';
+ //     }
+ // }
 
  // Product lumen 
  setInterval(function() {
@@ -356,7 +363,7 @@
  })
 
 
-
+ // Main looping function
  function start() {
      window.requestAnimationFrame(start);
      if (click_state == true) { // WHEN STOP CLICKING
@@ -381,14 +388,15 @@
          light = max_light;
      }
      max_lumen = Math.round(product_increment * 300);
-     // draw_batiments(data_batiments[1].galaxyWidth, data_batiments[1].galaxyColor);
+
+     // Draw in canvas
      redraw();
-     // draw_particles();
      achievements_require();
      update_particles();
      draw_particles();
      draw_batiments()
-         // LOCAL STORAGE
+
+         // Local storage updating
      localStorage.setItem("batiments_on_galaxy", JSON.stringify(batiments_on_galaxy));
      localStorage.setItem("data_upgrades_lumen", JSON.stringify(data_upgrades_lumen));
      localStorage.setItem("array", array);
@@ -516,6 +524,7 @@
      }, false);
  }
 
+ // Check if unlockable
  function redraw() {
      for (i = 0; i < upgrades_tab.batiments.length; i++) {
          if (illumination >= data_batiments[i].basePrice) {
@@ -537,6 +546,7 @@
      }
  }
 
+// Rewrite in html if buy
  function redraw_on_buy() {
      for (i = 0; i < upgrades_tab.batiments.length; i++) { // GET JSON DATA
          if (illumination >= data_batiments[i].basePrice) {
@@ -555,10 +565,8 @@
      for (i = 0; i < upgrades_tab.upgrades.length; i++) { // GET JSON DATA
          if (illumination >= data_upgrades_lumen[i].upgradePrice) {
              upgrades_tab.upgrades[i].style.color = "#fff";
-             // upgrades_tab.upgrades[i].desc.style.display = "none";
          } else {
              upgrades_tab.upgrades[i].style.color = "#727272"
-                 // upgrades_tab.upgrades[i].desc.style.display = "block";
          }
          upgrades_tab.upgrades[i].name.innerHTML = data_upgrades_lumen[i].id;
          for (n = 0; n < upgrades_tab.upgrades[n].price.length; n++) {
@@ -571,7 +579,7 @@
 
 
 
-
+// Add building in galaxy (canvas)
  function add_batiments(width, color) {
      var new_batiment = {};
      var pt_angle = Math.random() * 2 * Math.PI;
@@ -583,6 +591,7 @@
      batiments_on_galaxy.push(new_batiment);
  }
 
+// Draw building in galaxy (canvas)
  function draw_batiments() {
      for (var i = 0; i < batiments_on_galaxy.length; i++) {
          context.beginPath();
@@ -592,6 +601,7 @@
      }
  }
 
+// Add particle in galaxy (canvas)
  function add_particle(bat) {
      var particle = {};
      var pt_angle = Math.random() * 2 * Math.PI;
@@ -604,6 +614,7 @@
  }
 
  /* Updates particles */
+
  function update_particles() {
      context.clearRect(0, 0, canvas.width, canvas.height);
      for (var i = 0; i < particles.length; i++) {
@@ -811,7 +822,6 @@
  }
 
  // Achievements
-
  function check_achievement(achievement_number) {
      achievements_data[achievement_number].acquire = "true";
      var li_id = 0;
@@ -829,7 +839,7 @@
      }
  }
 
-
+// Requirements of achievements
  function achievements_require() {
      if ((product_increment > 1000) && achievements_data[0].acquire != "true") {
          check_achievement(0);
@@ -864,6 +874,7 @@
      }
  }
  achievements_storage();
+ 
  // Help window
  var help_status = 0;
  document.querySelector('.help_btn').addEventListener('click', function() {
