@@ -234,7 +234,7 @@
      html_news_list.innerHTML += '<li></li>';
      html_news_list_li = document.querySelectorAll('.news ul li');
      frameLooperNews();
- }, 6000);
+ }, 60000);
 
 
  function frameLooperNews(place) {
