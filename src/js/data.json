@@ -6,7 +6,7 @@ var data_batiments = [{
     "galaxyName": "solar_panels",
     "galaxyWidth": 2,
     "galaxyColor": "#ffffff",
-    "content": "Increase number of illuminers by : 10 "
+    "content": "Increase number of illuminers by :  0.1"
 }, {
     "id": "Sun abbaye",
     "basePrice": 100,
@@ -15,7 +15,7 @@ var data_batiments = [{
     "galaxyName": "sun_abbaye",
     "galaxyWidth": 2,
     "galaxyColor": "#4dead8",
-    "content": "Increase number of illuminers by : 100 "
+    "content": "Increase number of illuminers by : 1 "
 }, {
     "id": "House of the sun",
     "basePrice": 1100,
@@ -24,7 +24,7 @@ var data_batiments = [{
     "galaxyName": "house_sun",
     "galaxyWidth": 3,
     "galaxyColor": "#e4eab0",
-    "content": "Increase number of illuminers by : 1 100 "
+    "content": "Increase number of illuminers by : 8 "
 }, {
     "id": "Solar Chapel",
     "basePrice": 12000,
@@ -33,7 +33,7 @@ var data_batiments = [{
     "galaxyName": "solar_chapel",
     "galaxyWidth": 4,
     "galaxyColor": "#ffffff",
-    "content": "Increase number of illuminers by : 12 000 "
+    "content": "Increase number of illuminers by : 47 "
 }, {
     "id": "Stellar Church",
     "basePrice": 130000,
@@ -42,7 +42,7 @@ var data_batiments = [{
     "galaxyName": "stellar_church",
     "galaxyWidth": 5,
     "galaxyColor": "#eac46e",
-    "content": "Increase number of illuminers by : 130 000 "
+    "content": "Increase number of illuminers by : 260 "
 }, {
     "id": "Star Cathedral",
     "basePrice": 1400000,
@@ -51,7 +51,7 @@ var data_batiments = [{
     "galaxyName": "star_cathedral",
     "galaxyWidth": 6,
     "galaxyColor": "#ea9f5d",
-    "content": "Increase number of illuminers by : 140 000 "
+    "content": "Increase number of illuminers by : 1400 "
 }, {
     "id": "Plasma Palace",
     "basePrice": 20000000,
@@ -60,7 +60,7 @@ var data_batiments = [{
     "galaxyName": "plasma_place",
     "galaxyWidth": 6,
     "galaxyColor": "#88ea8c",
-    "content": "Increase number of illuminers by : 20 000 000 "
+    "content": "Increase number of illuminers by : 7800 "
 }, {
     "id": "Cult House of the Helium",
     "basePrice": 330000000,
@@ -69,7 +69,7 @@ var data_batiments = [{
     "galaxyName": "cult_helium",
     "galaxyWidth": 7,
     "galaxyColor": "#5eeac6",
-    "content": "Increase number of illuminers by : 330 000 000 "
+    "content": "Increase number of illuminers by :44 000 "
 }, {
     "id": "Novae Monument",
     "basePrice": 5100000000,
@@ -78,7 +78,7 @@ var data_batiments = [{
     "galaxyName": "novae",
     "galaxyWidth": 7,
     "galaxyColor": "#ea8ad4",
-    "content": "Increase number of illuminers by : 5 100 000 000 "
+    "content": "Increase number of illuminers by : 260 000 "
 }, {
     "id": "Super Novae Monument",
     "basePrice": 75000000000,
@@ -87,7 +87,7 @@ var data_batiments = [{
     "galaxyName": "super_novae",
     "galaxyWidth": 8,
     "galaxyColor": "#ea8ad4",
-    "content": "Increase number of illuminers by : 75 000 000 000 "
+    "content": "Increase number of illuminers by : 1 600 000 "
 }, {
     "id": "Sunshine Tower",
     "basePrice": 14000000000000,
@@ -96,7 +96,7 @@ var data_batiments = [{
     "galaxyName": "sunshine_tower",
     "galaxyWidth": 8,
     "galaxyColor": "#eac46e",
-    "content": "Increase number of illuminers by : 14 000 000 000 000"
+    "content": "Increase number of illuminers by : 10 000 000"
 }, {
     "id": "Sun Capital",
     "basePrice": 170000000000000,
@@ -105,7 +105,7 @@ var data_batiments = [{
     "galaxyName": "sun_capital",
     "galaxyWidth": 9,
     "galaxyColor": "#ea9863",
-    "content": "Increase number of illuminers by : 170 000 000 000 000 "
+    "content": "Increase number of illuminers by : 43 000 000 "
 }, ];
 
 var data_upgrades_lumen = [

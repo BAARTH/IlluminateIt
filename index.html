@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>Illuminate it</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="src/css/font-awesome.min.css">
@@ -12,10 +12,17 @@
 </head>
 
 <body>
-    <div class="galaxy">
-        <canvas width="100vw" height="100%">
+    <div class="eclipse">
+        <img src="src/img/moon.png">
+        <canvas class="warning_canvas"></canvas>
     </div>
-    <!-- <div class="loading">
+    <div class="galaxy">
+        <canvas class="galaxy_canvas" width="100vw" height="100%">
+    </div>
+    <div class="loading">
+        <div class="come_on_loading">
+            <span class="come_on"></span><span class="next_to">_</span>
+        </div>
         <div class="moon loading"></div>
         <div class="light_loading">
             <span class="light_loading_txt"></span>
@@ -23,16 +30,39 @@
         </div>
         <div class="skip_intro">skip intro
             <span class="next_to">_</span></div>
-    </div> -->
+    </div>
+    <div class="help_container">
+        <div class="help_section">
+            <h2>How to play_</h2>
+            <h4>"Commit to the glorious One, as He's unique and omniscient"</h4>
+            <p class="help_paragraph">In this slow paced clicker game, all you have to do is to lead humanity to enlightment by feeding the sun, and harvest the lumens it gives you back.</p>
+            <h3>Elements of gameplay </h3>
+            <p class="help_category">Performance_</p>
+            <p class="help_paragraph">It's the productivity of the Sun. Click on it to maintain it to peak levels as it'll decrease progressively.</p>
+            <p class="help_category">Lumens_</p>
+            <p class="help_paragraph">It's the quantity of light energy stored inside the sun. Click on "Unleash the light" below to harvest it !</p>
+            <p class="help_category">Illuminers_</p>
+            <p class="help_paragraph">Those are your great light devotees. They help you to feed the star, each one of them produces 1 Lumen per second</p>
+            <p class="help_category">Illumination_</p>
+            <p class="help_paragraph">This is the faith Sun's adepts have. It helps you to build more buildings to get more Illuminers, or to buy upgrades. You gain 1 for each 10 Lumens you harvest.</p>
+            <p class="help_category">Buildings_</p>
+            <p class="help_paragraph">Those are the main source of illuminers and, by extension, Lumens. Build more with illumination to produce lumens faster. Each one of them enlarge your star's lumen capacity.</p>
+            <p class="help_category">Mooners and Eclipses_</p>
+            <p class="help_paragraph">Mooners are your ennemies, as they pray a false god, the moon. The more illuminers you have, the more likely they're to appear : a lot of mooners will make eclipses happen more often (and you'll have to break the moon in order to continue gathering lumens).</p>
+            <p class="help_enjoy"> Enjoy the game and don't forget to <em>Praise the sun !</em></p>
+        </div>
+    </div>
     <div class="stats">
         <p class="light"></p>
         <p class="lumen"></p>
         <p class="illuminers"></p>
         <div class="unleash">Unleash the light</div>
         <p class="illumination">200 illumination</p>
+        <p class="mooners">Mooners</p>
     </div>
     <span class="open_tab open_upgrades">open upgrades_</span>
     <span class="open_tab open_news">open news_</span>
+    <div class="help_btn">Help</div>
     <div class="improvments news">
         <h2>News</h2>
         <ul>
@@ -42,7 +72,7 @@
     </div>
     <div class="improvments_container_upgrades">
         <div class="improvments batiments">
-            <h2>Built</h2>
+            <h2>Buildings</h2>
             <ul>
             </ul>
         </div>
@@ -55,12 +85,13 @@
     <span class="open_achievements">see achievements_</span>
     <div class="achievements">
         <ul>
-            
         </ul>
     </div>
     <div class="moon_b"></div>
     <div class="moon official"></div>
+    <audio class="intro_music" src="src/music/intro_illuminate.mp3"></audio>
     <audio src="src/music/game_sound.mp3" loop autoplay="true"></audio>
+    <audio class="click_sound" src="src/music/click_sun.wav"></audio>
     <script src="src/js/data.json"></script>
     <script src="src/js/news_anglais.json"></script>
     <script src="src/js/achievements.json"></script>

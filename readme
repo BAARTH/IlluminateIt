@@ -1,1 +1,65 @@
-Illuminate it
+ ______   ___    ___                                              __                   __                
+/\__  _\ /\_ \  /\_ \                        __                  /\ \__             __/\ \__             
+\/_/\ \/ \//\ \ \//\ \    __  __    ___ ___ /\_\    ___      __  \ \ ,_\    __     /\_\ \ ,_\            
+   \ \ \   \ \ \  \ \ \  /\ \/\ \ /' __` __`\/\ \ /' _ `\  /'__`\ \ \ \/  /'__`\   \/\ \ \ \/            
+    \_\ \__ \_\ \_ \_\ \_\ \ \_\ \/\ \/\ \/\ \ \ \/\ \/\ \/\ \L\.\_\ \ \_/\  __/    \ \ \ \ \_           
+    /\_____\/\____\/\____\\ \____/\ \_\ \_\ \_\ \_\ \_\ \_\ \__/.\_\\ \__\ \____\    \ \_\ \__\          
+    \/_____/\/____/\/____/ \/___/  \/_/\/_/\/_/\/_/\/_/\/_/\/__/\/_/ \/__/\/____/     \/_/\/__/  _______ 
+                                                                                                /\______\
+                                                                                                \/______/
+                                                                                                
+A game developped and designed by : Arthur Balossini, Lucile Van Severen, Kyle Hanzan, Hubert Petriacq et Antoine Amrhein.
+
+--------------------------------------------------------------------------------------------------------
+
+USED TECHNOLOGIES :
+
+- HTML5
+- CSS3
+- JAVASCRIPT
+
+--------------------------------------------------------------------------------------------------------
+
+PITCH :
+
+Create a "clicker" game having originals design and features. The meta base of the game is an incremental model, where the player is tasked to make a value higher and higher the fastest way possible, given tools as upgrades or gameplay elements (the clicker base).
+
+--------------------------------------------------------------------------------------------------------
+
+THE GAME :
+
+In ILLUMINATE IT_, your task is to generate Lumens by clicking and upgrading illuminates, a cult that will feed the sun. The gameplay revolves around 3 axis :
+
+    - The Lumen generation
+    - The Ill pool
+    - The Mooners
+    
+Ill pool depends on the Lumen generation, which can be upgraded by investing "ill" points, which are the money of the game. However, the player will face events such as eclipses that will reduce his productivity if he's not careful about his mooners pool, that'll increase during the game. To max out productivity, the player has to click on the sun : by doing that, the sun shines even more and produces more lumens.
+For the endgame, the primary goal of the player will be to maintain a good lumen input while reducing the mooners amount.
+
+--------------------------------------------------------------------------------------------------------
+
+FEATURES :
+
+    - An interactive loading page
+    - Sounds and music
+    - A lot of buildings with variable costs and impacts
+    - A NewsFeed with storyline elements
+    - 30 upgrades with home-made icons
+    - 15 achievements to discover
+
+--------------------------------------------------------------------------------------------------------
+
+COMING SOON :
+
+    - More buildings
+    - More upgrades
+    - More Achievements
+    - A player driven story
+    - More funny news
+    - More events like solar eruptions or nebulaes
+    - A multiplayer concept : the mega-sun, which all the players can feed giving them all a bonus (cooperation)
+    - Improved graphics and even more optimised source code
+    
+    
+    

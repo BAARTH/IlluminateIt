@@ -31,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .moon.loading {
     width: 30px;
     height: 30px;
-    opacity: 0.1;
+    opacity: 0.2;
     transition: opacity 0s ease-in;
 }
 
@@ -41,7 +41,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
 }
 
 .next_to {
@@ -50,13 +50,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     color: #ffffff;
 }
 
+.come_on_loading {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #ffffff;
+    transition: opacity 0.5s ease;
+}
+
 .skip_intro {
     color: #ffffff;
     position: absolute;
     bottom: 5%;
     right: 0%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.2s ease;
+    transition: opacity 0.5s ease;
 }
 
 .skip_intro:hover {
@@ -183,6 +193,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     color: #ffffff;
 }
 
+.stats p.illuminers {
+    font-size: 15px;
+}
+
 .stats .unleash {
     display: inline-block;
     font-size: 15px;
@@ -192,11 +206,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
     color: #ffffff;
     margin-bottom: 20px;
     transition: all ease 0.2s;
+    -webkit-animation: unleash_it 1s ease-in-out alternate infinite;
+    animation: unleash_it 1s ease-in-out alternate infinite;
 }
 
 .stats .unleash:hover {
     cursor: pointer;
     font-weight: bold;
+    -webkit-animation: none;
+    animation: none;
+}
+
+@-webkit-keyframes unleash_it {
+    to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes unleash_it {
+    to {
+        opacity: 0.7;
+    }
+}
+
+.stats .mooners {
+    font-size: 14px;
+    color: #c7c7c7;
 }
 
 .improvments_container_upgrades {
@@ -210,7 +245,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 
 .improvments.news {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 2%;
     height: 45%;
 }
@@ -328,6 +363,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .improvments .desc {
     background: #fff;
     color: #000;
+    opacity: 0.9;
     transform-origin: 100% 0;
     transform: translateX(-105%);
     transition: transform 0.3s ease-in;
@@ -417,9 +453,134 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
 .achievements .achievement_icon img {
     width: 50px;
     height: 50px;
-    background-color: #fff;
     transform: translateY(40%);
     margin-right: 10px;
+}
+
+
+/* HELP */
+
+.help_btn {
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+    bottom: 5px;
+    left: 2%;
+    transition: all 0.3s ease;
+}
+
+.help_btn:hover {
+    font-weight: bold;
+}
+
+.help_container {
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+    top: 5%;
+    color: #fff;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #fff;
+    overflow-y: scroll;
+    height: 90%;
+    transition: all 0.5s ease;
+}
+
+.help_container::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+}
+
+.help_container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.help_section {
+    padding: 5px 20px 10px 30px;
+}
+
+.help_section h2 {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0px 35px 0px;
+    text-align: left;
+}
+
+.help_section h3 {
+    font-weight: bold;
+    margin: 25px 0px 20px 0px;
+    font-size: 25px;
+}
+
+.help_section h4 {
+    font-style: italic;
+    text-align: center;
+}
+
+.help_paragraph {
+    margin: 15px auto 15px 35px;
+}
+
+.help_category {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.help_container em {
+    font-style: italic;
+}
+
+.help_enjoy {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+
+/*PURGE BTN */
+
+.purge {
+    font-weight: bold;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+
+/* ECLIPSES */
+
+eclipse img {
+    transition: transform 0.2s ease-in-out;
+    cursor: url(../img/mining_tool.png), pointer;
+}
+
+.eclipse {
+    user-select: none;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    opacity: 1;
+    margin-left: -20px;
+    left: 50%;
+    top: 50%;
+    margin: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: margin-left 3s, opacity 3s;
+}
+
+.eclipse img:active {
+    transform: scale(1.05);
+}
+
+.eclipse_spawn {
+    margin-left: 0px;
+    opacity: 1;
 }
 
 
@@ -503,9 +664,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         font-weight: bold;
         cursor: pointer;
     }
+    .open_achievements {
+        font-size: 12px;
+        top: 2%;
+    }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 380px) {
     .stats p {
         margin-bottom: 12px;
         font-size: 12px;
@@ -516,11 +681,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', end
         font-weight: normal;
         padding-bottom: 2px;
         margin-bottom: 10px;
+        z-index: 0;
     }
     .improvments_container_upgrades {
         width: 100%;
         background-color: rgba(0, 0, 0, 1);
-        z-index: 0;
+        z-index: 10;
     }
     .improvments.news {
         width: 100%;

@@ -24,10 +24,7 @@ function price_prevision100(a) {
 }
 
 
-// Fonctions des upgrades
-//illumination
-//convert_rate
-
+// Upgrades functions
 
 function upgrade_nova() {
     //Production rate of lumens x2
@@ -48,6 +45,8 @@ function upgrade_plasma_injector() {
 
 function upgrade_star() {
     //Sun max intensity goes up by 10%
+    star_color += 1;
+    set_star_color();
     return max_light += max_light / 10
 }
 
