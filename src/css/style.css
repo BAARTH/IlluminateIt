@@ -275,6 +275,11 @@ body {
     height: auto;
     margin-bottom: 20px;
     color: #ffffff;
+    min-height: auto;
+    height: auto;
+    padding-right: 10px;
+    text-align: right;
+    cursor: default;
 }
 
 .improvments.batiments {
@@ -686,17 +691,16 @@ body {
 }
 
 @media (max-width: 380px) {
-
     /* LOADING */
     .skip_intro {
         text-align: center;
-    color: #ffffff;
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease;
-}
+        color: #ffffff;
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.5s ease;
+    }
     /* STATISTICS */
     .stats p {
         margin-bottom: 12px;

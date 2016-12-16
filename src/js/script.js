@@ -18,7 +18,6 @@
  var string_come_on = "come on, illuminate it";
  var timer_come_on;
  array_come_on = string_come_on.split("");
- frameLooperLoading();
 
  function frameLooperLoading() {
      if (array_come_on.length > 0) {
@@ -28,6 +27,8 @@
      }
      timer_come_on = setTimeout('frameLooperLoading()', 100);
  }
+
+ frameLooperLoading();
 
  // Loading on click
  click_loading.addEventListener('click', loading_click);
@@ -233,7 +234,7 @@
      html_news_list.innerHTML += '<li></li>';
      html_news_list_li = document.querySelectorAll('.news ul li');
      frameLooperNews();
- }, 60000);
+ }, 6000);
 
 
  function frameLooperNews(place) {
@@ -396,7 +397,7 @@
      draw_particles();
      draw_batiments()
 
-         // Local storage updating
+     // Local storage updating
      localStorage.setItem("batiments_on_galaxy", JSON.stringify(batiments_on_galaxy));
      localStorage.setItem("data_upgrades_lumen", JSON.stringify(data_upgrades_lumen));
      localStorage.setItem("array", array);
@@ -546,7 +547,7 @@
      }
  }
 
-// Rewrite in html if buy
+ // Rewrite in html if buy
  function redraw_on_buy() {
      for (i = 0; i < upgrades_tab.batiments.length; i++) { // GET JSON DATA
          if (illumination >= data_batiments[i].basePrice) {
@@ -579,7 +580,7 @@
 
 
 
-// Add building in galaxy (canvas)
+ // Add building in galaxy (canvas)
  function add_batiments(width, color) {
      var new_batiment = {};
      var pt_angle = Math.random() * 2 * Math.PI;
@@ -591,7 +592,7 @@
      batiments_on_galaxy.push(new_batiment);
  }
 
-// Draw building in galaxy (canvas)
+ // Draw building in galaxy (canvas)
  function draw_batiments() {
      for (var i = 0; i < batiments_on_galaxy.length; i++) {
          context.beginPath();
@@ -601,7 +602,7 @@
      }
  }
 
-// Add particle in galaxy (canvas)
+ // Add particle in galaxy (canvas)
  function add_particle(bat) {
      var particle = {};
      var pt_angle = Math.random() * 2 * Math.PI;
@@ -626,7 +627,6 @@
              i--;
          }
      }
-
  }
 
  /* Draw particles on the position of destroyed target */
@@ -839,7 +839,7 @@
      }
  }
 
-// Requirements of achievements
+ // Requirements of achievements
  function achievements_require() {
      if ((product_increment > 1000) && achievements_data[0].acquire != "true") {
          check_achievement(0);
@@ -874,7 +874,7 @@
      }
  }
  achievements_storage();
- 
+
  // Help window
  var help_status = 0;
  document.querySelector('.help_btn').addEventListener('click', function() {
